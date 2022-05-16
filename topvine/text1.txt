@@ -1,0 +1,3 @@
+<h2>TopVine-ArchiDigit</h2>
+
+A 3D digital reconstruction model of grapevine, either representing raw field data, or statisticaly simulating canopy structure variability, depending on cultivar and training systems.

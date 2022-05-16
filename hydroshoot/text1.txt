@@ -1,0 +1,1 @@
+A static Functional-Structural Plant Model (FSPM) to simulate the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, from organ to canopy levels.
