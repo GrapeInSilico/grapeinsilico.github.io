@@ -27,7 +27,7 @@ async function insertLink(fromPath,intoElem){
 
 async function dothis(model) {
 
-    basepath = "/Site1/";
+    basepath = "/";
 
     text1path = basepath.concat(model,"/text1.txt");
     text2path = basepath.concat(model,"/text2.txt");
