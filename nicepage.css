@@ -3,6 +3,11 @@
  * License https://froala.com/wysiwyg-editor/terms/
  * Copyright 2014-2021 Froala Labs
  */
+ 
+ .brd{ 
+  border:    3px solid rgb(0, 0, 0);
+  
+}
 
 .fr-clearfix::after {
   clear: both;
