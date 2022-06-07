@@ -6,8 +6,19 @@
  
  .brd{ 
   border:    3px solid rgb(0, 0, 0);
-  
 }
+
+.logos{ 
+  
+
+}
+
+.logocontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .fr-clearfix::after {
   clear: both;
