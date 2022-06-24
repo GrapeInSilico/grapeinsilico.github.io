@@ -1,3 +1,6 @@
+/*
+PANDOC !
+*/ 
 async function insertHtml(fromPath,intoElem) {
 
     let response = await fetch(fromPath, {method: "GET"});
@@ -16,7 +19,6 @@ async function insertHtml(fromPath,intoElem) {
     document.getElementById(intoElem).innerHTML = text;
 
     }
-
 
 async function insertLink(fromPath,intoElem){
     let response = await fetch(fromPath, {method: "GET"});
