@@ -10,7 +10,8 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 // Change the confiuration file (add the theme)
 echo theme = \"ananke\" >> config.toml
 
-
+// add blank page to the website
+hugo new posts/my-first-post.md
 
 
 

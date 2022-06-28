@@ -136,6 +136,6 @@ list_format = see_all_convertible_format_folder(folder)
 new_format = "md"
 output_foldername = r"C:\Users\gandeell\Documents\pandoc-test\test\Copied_MD"
 
-convert_tree(folder, new_format, output_foldername)
+#convert_tree(folder, new_format, output_foldername)
 
-
+convert_file(r'C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\README.rst', 'rst', 'md', r'C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\quickstart\content\README.md')
