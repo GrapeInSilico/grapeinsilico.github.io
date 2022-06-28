@@ -1,0 +1,116 @@
+name: hugo
+version: git
+summary: Fast and Flexible Static Site Generator
+description: |
+  Hugo is a static HTML and CSS website generator written in Go. It is
+  optimized for speed, easy use and configurability. Hugo takes a directory
+  with content and templates and renders them into a full HTML website.
+license: "Apache-2.0"
+base: core20
+confinement: strict
+grade: stable # "devel" or "stable"
+
+package-repositories:
+  - type: apt
+    components: [main]
+    suites: [focal]
+    key-id: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
+    url: https://deb.nodesource.com/node_16.x
+
+plugs:
+  system-gitconfig:
+    interface: system-files
+    read:
+    - /etc/gitconfig
+  user-gitconfig:
+    interface: personal-files
+    read:
+    - $HOME/.gitconfig
+    - $HOME/.config/git/config
+    
+apps:
+  hugo:
+    environment:
+      HOME: $SNAP_REAL_HOME
+    command: bin/hugo
+    completer: hugo-completion
+    plugs:
+      - home
+      - network-bind
+      - removable-media
+      - system-gitconfig
+      - user-gitconfig
+
+parts:
+  git:
+    plugin: nil
+    stage-packages:
+      - git
+    organize:
+      usr/bin/: bin/
+    prime:
+      - bin/git
+
+  hugo:
+    plugin: nil
+    build-snaps: [go/1.18/stable]
+    source: .
+    override-build: |
+      set -ex
+
+      echo "\nStarting override-build:"
+      export GOPATH=$(realpath ../go)
+      export PATH=$GOPATH/bin:$PATH
+
+      echo ' * Running "go install -v github.com/magefile/mage"...'
+      go install -v github.com/magefile/mage
+
+      #echo ' * Running "mage -v test"...'
+      #mage -v test
+
+      echo " * SNAPCRAFT_IMAGE_INFO=${SNAPCRAFT_IMAGE_INFO=}"
+      # Example: SNAPCRAFT_IMAGE_INFO='{"build_url": "https://launchpad.net/~gohugoio/+snap/hugo-extended-dev/+build/344022"}'
+      export HUGO_BUILD_TAGS=""
+      if echo $SNAPCRAFT_IMAGE_INFO | grep -q '/+snap/hugo-extended'; then
+        HUGO_BUILD_TAGS="extended"
+      fi
+      echo " * Building hugo (HUGO_BUILD_TAGS=\"$HUGO_BUILD_TAGS\")..."
+      [ "$SNAPCRAFT_PROJECT_GRADE" = "stable" ] && mage -v hugoNoGitInfo || mage -v hugo
+      ./hugo version
+      ldd hugo || :
+
+      echo " * Building shell completion..."
+      ./hugo completion bash > hugo-completion
+
+      echo " * Installing to ${SNAPCRAFT_PART_INSTALL}..."
+      install -d $SNAPCRAFT_PART_INSTALL/bin
+      cp -av hugo $SNAPCRAFT_PART_INSTALL/bin/
+      mv -v hugo-completion $SNAPCRAFT_PART_INSTALL/
+
+      echo " * Stripping binary..."
+      ls -l $SNAPCRAFT_PART_INSTALL/bin/hugo
+      strip --remove-section=.comment --remove-section=.note $SNAPCRAFT_PART_INSTALL/bin/hugo
+      ls -l $SNAPCRAFT_PART_INSTALL/bin/hugo
+
+  node:
+    plugin: nil
+    stage-packages:
+      - nodejs
+    organize:
+      usr/bin/: bin/
+      usr/lib/: lib/
+    prime:
+      - bin/node
+      - lib/*/lib*.so*
+
+  pandoc:
+    plugin: nil
+    stage-packages:
+      - libatomic1
+      - pandoc
+      - pandoc-data
+    organize:
+      usr/bin/: bin/
+      usr/lib/: lib/
+    prime:
+      - bin/pandoc
