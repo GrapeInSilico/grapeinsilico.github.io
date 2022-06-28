@@ -1,0 +1,11 @@
+Note : ATTENTIOn à la version de Hugo utilisé : extended ou pas
+
+cd <<Your directory>>
+
+hugo new site <<website name>>
+
+cd <<website name>>
+
+git init
+git submodule add <<git adress of the theme you will use to create the website>> themes/<<theme_name>>
+
