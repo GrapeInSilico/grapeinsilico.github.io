@@ -1,10 +1,43 @@
 import pypandoc
 import os
 import shutil
+import random
+
+
+# get title of a markdown file
+def get_title(file):
+    with open(file, 'r') as f:
+        for line in f:
+            if line.startswith('#'):
+                return line[2:].strip()
+    return ""
+
+# get title from notebook
+def get_title_notebook(file):
+    with open(file, 'r') as f:
+        for line in f:
+            if line.startswith('#'):
+                return line[2:].strip()
+    return ""
+
+# list of all the images name in the folder
+def list_images_folder(folder):
+    images = []
+    for file in listdir_fullpath(folder):
+        if (file.endswith(".jpg") or file.endswith(".png") or file.endswith(".jpeg")):
+            images.append(os.path.basename(file))
+    return images
 
 # List of all the files in the folder
 def listdir_fullpath(d):
     return [os.path.join(d, f) for f in os.listdir(d)]
+
+# import text at the beginning of the file
+def import_text(file, text):
+    with open(file, "r") as f:
+        content = f.read()
+    with open(file, "w") as f:
+        f.write(text + "\n" + content)
 
 
 # We will convert the files of a folder each by each
@@ -23,13 +56,20 @@ def convert_file(file, old_format, file_format, output_foldername = ""):
     # Then the file is converted 
     try:
         print(file)
-        output = pypandoc.convert_file(file, format=old_format, to =file_format, outputfile=new_file_name)
-        assert output == "", "Ouch problem"
+        if (os.path.splitext(file)[1] == ".ipynb"):
+            output = os.system("jupyter nbconvert --to markdown " + os.path.abspath(file) +" --output " + output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md")
+        else:
+            output = pypandoc.convert_file(file, format=old_format, to =file_format, outputfile=new_file_name)
+        #assert output == "", "Ouch problem"
         print("File converted in " + output_foldername)
     except RuntimeError:
         print("bad format")
         shutil.copy(file, os.path.abspath(output_foldername))
         print("Copied !")
+    images = list_images_folder(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\static\images\images")
+    # Title probleme to be fixed
+    string = "+++" +"\n" + "title = '" + get_title_notebook(output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md") + "'\n" + "slug = 'post"+ str(random.randint(0,100)) +"'\n"+ "image = 'images/images/"+images[random.randint(0, len(images)-1)] +"'\n"+ "description = 'Short description'" +"\n"+ "disableComments = true" +"\n" + "+++" +"\n"
+    import_text(new_file_name, string)
     print()
 
 # Call the function to convert the files of a list of files with a list of formats
@@ -50,7 +90,7 @@ def see_all_convertible_format_folder(folder):
 
 # Return the list of all the files that we can convert that are present in the folder
 def see_all_convertible_files_folder(folder):
-    convertible = pypandoc.get_pandoc_formats()[0] # Files that we can convert | [1] : converted possible files type
+    convertible = pypandoc.get_pandoc_formats()[0] + pypandoc.get_pandoc_formats()[1] # Files that we can convert | [1] : converted possible files type
     files = []
     for file in listdir_fullpath(folder):
         index_last_point = file.rfind('.')
@@ -138,4 +178,6 @@ output_foldername = r"C:\Users\gandeell\Documents\pandoc-test\test\Copied_MD"
 
 #convert_tree(folder, new_format, output_foldername)
 
-convert_file(r'C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\README.rst', 'rst', 'md', r'C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\quickstart\content\README.md')
+convert_folder_convertible(r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\example", "md", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post")
+
+from nbconvert import nbconvertapp
