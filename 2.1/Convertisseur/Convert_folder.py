@@ -12,12 +12,19 @@ def get_title(file):
                 return line[2:].strip()
     return ""
 
-# get title from notebook
-def get_title_notebook(file):
+# get first sentence after the title of a markdown file
+def get_first_sentence(file):
     with open(file, 'r') as f:
         for line in f:
+            #choose next line if it is a title
             if line.startswith('#'):
-                return line[2:].strip()
+                continue
+            #choose next line if it is a empty line
+            if line.strip() == "":
+                continue
+            #return the first sentence
+            else:
+                return line.strip().replace("#", "").replace("_", " ").replace("`", " ")
     return ""
 
 # list of all the images name in the folder
@@ -32,13 +39,13 @@ def list_images_folder(folder):
 def listdir_fullpath(d):
     return [os.path.join(d, f) for f in os.listdir(d)]
 
-# import text at the beginning of the file
+# import a text at the beginning of a file
 def import_text(file, text):
-    with open(file, "r") as f:
-        content = f.read()
-    with open(file, "w") as f:
-        f.write(text + "\n" + content)
-
+    with open(file, 'r') as f:
+        lines = f.readlines()
+    with open(file, 'w') as f:
+        f.writelines(text + "\n")
+        f.writelines(lines)
 
 # We will convert the files of a folder each by each
 
@@ -62,14 +69,15 @@ def convert_file(file, old_format, file_format, output_foldername = ""):
             output = pypandoc.convert_file(file, format=old_format, to =file_format, outputfile=new_file_name)
         #assert output == "", "Ouch problem"
         print("File converted in " + output_foldername)
+        images = list_images_folder(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\static\images\test")
+        # Title probleme to be fixed
+        string = "+++" +"\n" + "title = '" + get_title(output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md") + "'\n" + "slug = 'post"+ str(random.randint(0,100)) +"'\n"+ "image = 'images/test/"+images[random.randint(0, len(images)-1)] +"'\n"+ "description = '" + get_first_sentence(file) +"'\n"+ "disableComments = true" +"\n" + "+++" +"\n"
+        string.replace("'", "\"")
+        import_text(new_file_name, string)
     except RuntimeError:
         print("bad format")
         shutil.copy(file, os.path.abspath(output_foldername))
         print("Copied !")
-    images = list_images_folder(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\static\images\images")
-    # Title probleme to be fixed
-    string = "+++" +"\n" + "title = '" + get_title_notebook(output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md") + "'\n" + "slug = 'post"+ str(random.randint(0,100)) +"'\n"+ "image = 'images/images/"+images[random.randint(0, len(images)-1)] +"'\n"+ "description = 'Short description'" +"\n"+ "disableComments = true" +"\n" + "+++" +"\n"
-    import_text(new_file_name, string)
     print()
 
 # Call the function to convert the files of a list of files with a list of formats
@@ -174,10 +182,9 @@ folder = r"C:\Users\gandeell\Documents\pandoc-test\test\Repo"
 files = see_all_convertible_files_folder(folder)
 list_format = see_all_convertible_format_folder(folder)
 new_format = "md"
-output_foldername = r"C:\Users\gandeell\Documents\pandoc-test\test\Copied_MD"
+output_foldername = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post"
 
-#convert_tree(folder, new_format, output_foldername)
+convert_tree(folder, new_format, output_foldername)
 
-convert_folder_convertible(r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\example", "md", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post")
+#convert_folder_convertible(r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\example", "md", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post")
 
-from nbconvert import nbconvertapp
