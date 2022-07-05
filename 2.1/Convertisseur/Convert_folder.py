@@ -2,29 +2,80 @@ import pypandoc
 import os
 import shutil
 import random
+from tkinter.filedialog import askopenfilenames, askdirectory
+from tkinter import Tk
 
+global rescue_foldername
+rescue_foldername = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_massive\content\other"
+global i, posti, inde
+i = 1
+posti = 1
+inde = 1
+
+# get extension of a file
+def get_extension(file):
+    index_last_point = file.rfind('.')
+    return file[index_last_point+1:]
+
+# ask for a list of files
+def ask_files(copied_folder):
+    files = []
+    folders = []
+    answer = ""
+    root = Tk()
+    root.withdraw()
+    root.attributes('-topmost', True)
+    while (answer != "done"):
+        print("When you are done, enter 'done'")
+        print("would you like to convert some files or a folder of files ?")
+        answer = input("(1) files\n(2) folder\n")
+        if answer == "1":
+            print("Please select the files you want to convert")
+            print("you can select multiple files by pressing ctrl+click")
+            adress = askopenfilenames(initialdir=copied_folder, title="Select files")
+            print()
+            print("Files selected :")
+            for file in adress:
+                if (os.path.exists(file) and os.path.isfile(file)):
+                    files.append(file)
+            print(files)
+            print()
+        elif answer == "2":
+            print("Please select the folders you want to convert")
+            print("if you want to stop selecting folders, click on the cancel button")
+            while True:
+                adress = askdirectory(initialdir=copied_folder, title="Select folder")
+                if (adress == ""):
+                    break
+                if (os.path.exists(adress) and os.path.isdir(adress)):
+                    folders.append(adress)
+            print()
+            print("Folders selected :")
+            print(folders)
+            print()
+        elif answer != "done" and answer != "1" and answer != "2":
+            print("Please select a valid answer")
+            ask_files()
+    print("files = ", files)
+    print("folders = ", folders)
+    return [files, folders]
+
+# convert the selected files and folers of ask_files()
+def convert_files_and_folders(copied_folder, new_format, output_foldername="", image_folder=""):
+    list = ask_files(copied_folder)
+    list_files = list[0]
+    list_folders = list[1]
+    for file in list_files:
+        convert_file(file, get_extension(file), new_format, output_foldername, image_folder)
+    for folder in list_folders:
+        convert_tree(folder, new_format, output_foldername + "\\" + os.path.basename(folder), image_folder, convertible = False)
 
 # get title of a markdown file
 def get_title(file):
     with open(file, 'r') as f:
         for line in f:
             if line.startswith('#'):
-                return line[2:].strip()
-    return ""
-
-# get first sentence after the title of a markdown file
-def get_first_sentence(file):
-    with open(file, 'r') as f:
-        for line in f:
-            #choose next line if it is a title
-            if line.startswith('#'):
-                continue
-            #choose next line if it is a empty line
-            if line.strip() == "":
-                continue
-            #return the first sentence
-            else:
-                return line.strip().replace("#", "").replace("_", " ").replace("`", " ")
+                return line[2:].strip().replace("#", "").replace("_", " ").replace("`", " ")
     return ""
 
 # list of all the images name in the folder
@@ -39,6 +90,45 @@ def list_images_folder(folder):
 def listdir_fullpath(d):
     return [os.path.join(d, f) for f in os.listdir(d)]
 
+# import description if there is one
+def import_description(file):
+    text= ""
+    with open(file, 'r') as f:
+        for line in f:
+            #choose next line if it is a title
+            if line.startswith('#') and line.find("Description") != -1:
+                while line.strip() == "":
+                    continue
+                while line.strip() != "" and not line.startswith('#'):
+                    text += line.strip
+                    continue
+                index_first_point = text.find('.')
+                text = text[0:index_first_point]
+                return text
+
+    # return first three lines if there is no description
+    with open(file, 'r') as f:
+        k = 1
+        for line in f:
+            if line.startswith('#'):
+                continue
+            if line.strip() == "":
+                continue
+            if k > 3:
+                break
+            text += line.strip()
+            k += 1
+    return text
+
+# import text from file from line a to line b
+def import_text_from_file(file, a, b):
+    with open(file, 'r') as f:
+        lines = f.readlines()
+    text = ""
+    for i in range(a, b):
+        text += lines[i]
+    return text
+
 # import a text at the beginning of a file
 def import_text(file, text):
     with open(file, 'r') as f:
@@ -48,17 +138,34 @@ def import_text(file, text):
         f.writelines(lines)
 
 # We will convert the files of a folder each by each
-
-def convert_file(file, old_format, file_format, output_foldername = ""): 
+def convert_file(file, old_format, file_format, output_foldername = "", image_folder = ""): 
     # Where 'output_filename' is the absolute path leading to the folder which will containe the converted file
     file = os.path.abspath(file)
     if output_foldername == "":
         output_foldername= os.path.dirname(file)
+    elif not os.path.exists(output_foldername):
+        os.makedirs(output_foldername)
     
     # First, the name of the output file is created 
     file_name = os.path.basename(file)
     index_last_point = file_name.rfind('.')
-    new_file_name = output_foldername + "\\" + file_name.replace(file_name[index_last_point:], '.' + file_format)
+    new_file_name = output_foldername + "\\" +  file_name.replace(file_name[index_last_point:], '.' + file_format)
+    
+    # if new_file_name already exists, we will add a random number to the name
+    if os.path.exists(new_file_name) :
+        global i
+        new_file_name = output_foldername + "\\" +  file_name.replace(file_name[index_last_point:], "(" + str(i) + ').' + file_format)
+        i = i + 1
+
+    # if the file is named index.md, we will rename it to index_i.md
+    if os.path.basename(new_file_name) == "index.md":
+        global inde
+        new_file_name = output_foldername + "\\" +  "index_" + str(inde) + ".md"
+        inde = inde + 1
+
+    print()
+    print("Converting : " + new_file_name)
+    print()
 
     # Then the file is converted 
     try:
@@ -67,24 +174,32 @@ def convert_file(file, old_format, file_format, output_foldername = ""):
             output = os.system("jupyter nbconvert --to markdown " + os.path.abspath(file) +" --output " + output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md")
         else:
             output = pypandoc.convert_file(file, format=old_format, to =file_format, outputfile=new_file_name)
-        #assert output == "", "Ouch problem"
         print("File converted in " + output_foldername)
-        images = list_images_folder(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\static\images\test")
+        if image_folder != "":
+            image = list_images_folder(image_folder)
+            images = "'\n"+ "image = 'images/post/"+image[random.randint(0, len(image)-1)] # Autimatically choose a random image from the folder (TO IMPROVE)
+        else :
+            images = ""
         # Title probleme to be fixed
-        string = "+++" +"\n" + "title = '" + get_title(output_foldername +"\\" + os.path.splitext(os.path.basename(file))[0] + ".md") + "'\n" + "slug = 'post"+ str(random.randint(0,100)) +"'\n"+ "image = 'images/test/"+images[random.randint(0, len(images)-1)] +"'\n"+ "description = '" + get_first_sentence(file) +"'\n"+ "disableComments = true" +"\n" + "+++" +"\n"
+        global posti
+        string = "+++" +"\n" + "title = '" + get_title(new_file_name) + "'\n" + "slug = 'post"+ str(posti) + images +"'\n"+ "description = '" + import_description(new_file_name) +"'\n"+ "disableComments = true" +"\n" + "+++" +"\n"
         string.replace("'", "\"")
+        posti = posti + 1
         import_text(new_file_name, string)
     except RuntimeError:
         print("bad format")
-        shutil.copy(file, os.path.abspath(output_foldername))
+        global rescue_foldername
+        if not os.path.exists(rescue_foldername):
+            os.makedirs(rescue_foldername)
+        shutil.copy(file, os.path.abspath(rescue_foldername))
         print("Copied !")
     print()
 
 # Call the function to convert the files of a list of files with a list of formats
-def convert_multiple_files_with_formats(files, list_format, new_format, output_foldername):
+def convert_multiple_files_with_formats(files, list_format, new_format, output_foldername="", image_folder=""):
     for format in list_format:
         for file in files:
-            convert_file(file, format, new_format, output_foldername)
+            convert_file(file, format, new_format, output_foldername, image_folder)
 
 # Return the list of all the formats that are in the folder that we can convert
 def see_all_convertible_format_folder(folder):
@@ -107,15 +222,15 @@ def see_all_convertible_files_folder(folder):
     return files
 
 # Convert only the compatible files of a folder with a new_format into an output_folder
-def convert_folder_convertible(folder, new_format, output_foldername = ""):
+def convert_folder_convertible(folder, new_format, output_foldername = "", image_folder=""):
     if output_foldername == "":
         output_foldername = folder
     files = see_all_convertible_files_folder(folder)
     list_format = see_all_convertible_format_folder(folder)
-    convert_multiple_files_with_formats(files, list_format, new_format, output_foldername)
+    convert_multiple_files_with_formats(files, list_format, new_format, output_foldername, image_folder)
 
 # Convert the compatible files (and copy the other ones) of a folder with a new_format into an output_folder
-def convert_folder_all_included(folder, new_format, output_foldername = ""):
+def convert_folder_all_included(folder, new_format, output_foldername = "", image_folder=""):
     if output_foldername == "":
         output_foldername = folder
     files = see_all_convertible_files_folder(folder)
@@ -123,47 +238,20 @@ def convert_folder_all_included(folder, new_format, output_foldername = ""):
     for file in listdir_fullpath(folder):
         if (file not in files and os.path.isfile(file)):
             shutil.copy(file, os.path.abspath(output_foldername))
-    convert_multiple_files_with_formats(files, list_format, new_format, output_foldername)
-
-
-folder = r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\doc"
-files = see_all_convertible_files_folder(folder)
-list_format = see_all_convertible_format_folder(folder)
-new_format = "md"
-output_foldername = r"C:\Users\gandeell\Documents\pandoc-test\test\Copied"
-
-#convert_folder_all_included(folder, new_format, output_foldername)
-
-folder = r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\example"
-files = see_all_convertible_files_folder(folder)
-list_format = see_all_convertible_format_folder(folder)
-new_format = "md"
-output_foldername = r"C:\Users\gandeell\Documents\pandoc-test\test\Copied"
-
-#convert_multiple_files_with_formats(files, list_format, new_format, output_foldername)
-
+    convert_multiple_files_with_formats(files, list_format, new_format, output_foldername, image_folder)
 
 # Replicate and convert somes files in an entirey tree of folders (all of them if convertible == False, only the convertible if convertible == True)
-def convert_tree(folder, new_format, output_foldername = "", convertible = False, First_run = True):
-
-    if First_run:
-        if output_foldername == "":
-            output_foldername = folder
-        else:
-            output_foldername = output_foldername + "\\"+ os.path.basename(folder) + "_converted"
-    else:
-        if output_foldername == "":
-            output_foldername = folder + "\\"+ os.path.basename(folder) + "_converted"
-        else:
-            output_foldername = output_foldername 
+def convert_tree(folder, new_format, output_foldername = "", image_folder = "", convertible = False):
+    if output_foldername == "":
+        output_foldername = folder
     
     if not os.path.exists(output_foldername):
         os.mkdir(output_foldername)
 
     if convertible:
-        convert_folder_convertible(folder, new_format, output_foldername)
+        convert_folder_convertible(folder, new_format, output_foldername, image_folder)
     else:
-        convert_folder_all_included(folder, new_format, output_foldername)
+        convert_folder_all_included(folder, new_format, output_foldername, image_folder)
 
     for object in listdir_fullpath(folder):
         if os.path.isdir(object):
@@ -172,19 +260,4 @@ def convert_tree(folder, new_format, output_foldername = "", convertible = False
                 os.mkdir(os.path.abspath(output_foldername) + "\\" + os.path.basename(object))
             except FileExistsError:
                 print("Folder already exists")
-            convert_tree(object, new_format, os.path.abspath(output_foldername) + "\\" + os.path.basename(object), First_run=False)
-
-print()
-print("start---------------------------------------")
-print()
-
-folder = r"C:\Users\gandeell\Documents\pandoc-test\test\Repo"
-files = see_all_convertible_files_folder(folder)
-list_format = see_all_convertible_format_folder(folder)
-new_format = "md"
-output_foldername = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post"
-
-convert_tree(folder, new_format, output_foldername)
-
-#convert_folder_convertible(r"C:\Users\gandeell\Documents\pandoc-test\test\Repo\example", "md", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_test_2_1\content\post")
-
+            convert_tree(object, new_format, os.path.abspath(output_foldername) + "\\" + os.path.basename(object), image_folder)
