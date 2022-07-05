@@ -6,7 +6,7 @@ from tkinter.filedialog import askopenfilenames, askdirectory
 from tkinter import Tk
 
 global rescue_foldername
-rescue_foldername = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test\hugo_massive\content\other"
+rescue_foldername = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\test"
 global i, posti, inde
 i = 1
 posti = 1
@@ -189,6 +189,8 @@ def convert_file(file, old_format, file_format, output_foldername = "", image_fo
     except RuntimeError:
         print("bad format")
         global rescue_foldername
+        # get parent folder of the folder
+        rescue_foldername = output_foldername + "\\" + "rescue"
         if not os.path.exists(rescue_foldername):
             os.makedirs(rescue_foldername)
         shutil.copy(file, os.path.abspath(rescue_foldername))
