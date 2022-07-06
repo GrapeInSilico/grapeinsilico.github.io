@@ -29,12 +29,6 @@ print("Your website will be created in " + site_folder)
 name = input("Give it a name (ex: my_website) \n")
 os.system("cd " + site_folder + " && hugo new site " + name)
 print()
-print("Select the images you want to use in your website")
-image_list = cloneFromGit.ask_images()
-image_folder = site_folder + "\\" + name + "\\" + "static\\" + "images"
-os.makedirs(image_folder + "\\" + "post")
-for image in image_list:
-    shutil.copy(image, image_folder + "\\post\\" + os.path.basename(image))
 
 print("Fourth step: clone your gitHub repository :")
 
@@ -70,6 +64,14 @@ print("Fifth step: choose the theme that you want to use : https://themes.gohugo
 theme_url = input("Please return its git repository, for example : https://github.com/theNewDynamic/gohugo-theme-ananke \n")
 subprocess.call("cd " + site_folder + "\\" + name + "&& git init && git submodule add " + theme_url + " themes/" + theme_url.split("/")[-1], shell=True)
 
+print("Select the images you want to use in your website")
+image_list = cloneFromGit.ask_images()
+image_folder = site_folder + "\\" + name + "\\" + "static\\" + "images"
+os.makedirs(image_folder + "\\" + "post")
+for image in image_list:
+    shutil.copy(image, image_folder + "\\post\\" + os.path.basename(image))
+
+
 print()
 print("start---------------------------------------")
 print()
@@ -93,8 +95,9 @@ print("lets see the website :")
 #webbrowser.open('http://localhost:1313/')
 print()
 print("Configuring config.toml")
-with open(site_folder + "\\" + name + "\\" + "config.toml", "r") as f:
-    config_base = f.readlines() # problem !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Copy the config.toml file in a string
+config_toml_string = open(site_folder + "\\" + name + "\\" + "config.toml", "r").read() + "\n"
+print(config_toml_string)
 os.remove(site_folder + "\\" + name + "\\" + "config.toml")
 
 try:
@@ -103,13 +106,13 @@ except FileNotFoundError:
     try:
         print("No config folder found")
         shutil.copyfile(cloneFromGit.find_file(site_folder + "\\" + name +"\\" + "themes/" + theme_url.split("/")[-1] + "\\" + "exampleSite", "config.toml"), site_folder + "\\" + name + "\\" + "config.toml")
-        cloneFromGit.change_line(site_folder + "\\" + name + "\\" + "config.toml", "theme = ", "theme = '" + theme_url.split("/")[-1] + "'\n")
+        #cloneFromGit.change_line(site_folder + "\\" + name + "\\" + "config.toml", "theme = ", "theme = '" + theme_url.split("/")[-1] + "'\n")
     except FileNotFoundError:
         print("No config.toml file found")
-        os.system()
         # write sentence at the end of the file
+        os.makedirs(site_folder + "\\" + name + "\\" + "config.toml")
         with open(site_folder + "\\" + name + "\\" + "config.toml", "a") as myfile:
-            myfile.write(config_base + "theme = '"+theme_url.split("/")[-1]+"'")
+            myfile.write(config_toml_string + "theme = '"+theme_url.split("/")[-1]+"'")
 
 print()
 print("Done ! You can now see your website ")
