@@ -1,4 +1,4 @@
-Note : ATTENTIOn à la version de Hugo utilisé : extended ou pas
+Note : ATTENTION à la version de Hugo utilisé : extended ou pas
 
 cd <<Your directory>>
 
@@ -8,4 +8,8 @@ cd <<website name>>
 
 git init
 git submodule add <<git adress of the theme you will use to create the website>> themes/<<theme_name>>
+
+hugo server "-D"
+
+hugo -D
 
