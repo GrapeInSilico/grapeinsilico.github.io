@@ -14,11 +14,25 @@ inde = 1
 
 # get extension of a file
 def get_extension(file):
+    """
+    Get extension of a file
+    Args:
+        file: the file
+    type:
+        file: str
+"""
     index_last_point = file.rfind('.')
     return file[index_last_point+1:]
 
 # ask for a list of files
 def ask_files(copied_folder):
+    """
+    Ask for a list of files
+    Args:
+        copied_folder: the folder where the files and folders had been copied
+    type:
+        copied_folder: str
+    """
     files = []
     folders = []
     answer = ""
@@ -62,6 +76,19 @@ def ask_files(copied_folder):
 
 # convert the selected files and folers of ask_files()
 def convert_files_and_folders(copied_folder, new_format, output_foldername="", image_folder=""):
+    """
+    Convert the selected files and folers of ask_files()
+    Args:
+        copied_folder: the folder where the files and folders are copied
+        new_format: the format of the new files
+        output_foldername: the folder where the new files will be saved
+        image_folder: the folder where the images are saved
+    type:
+        copied_folder: str
+        new_format: str
+        output_foldername: str
+        image_folder: str
+    """
     list = ask_files(copied_folder)
     list_files = list[0]
     list_folders = list[1]
@@ -72,6 +99,13 @@ def convert_files_and_folders(copied_folder, new_format, output_foldername="", i
 
 # get title of a markdown file
 def get_title(file):
+    """
+    Get title of a markdown file
+    Args:
+        file: the file
+    type:
+        file: str
+    """
     with open(file, 'r') as f:
         for line in f:
             if line.startswith('#'):
@@ -80,6 +114,13 @@ def get_title(file):
 
 # list of all the images name in the folder
 def list_images_folder(folder):
+    """
+    List of all the images name in the folder
+    Args:
+        folder: the folder
+    type:
+        folder: str
+    """
     images = []
     for file in listdir_fullpath(folder):
         if (file.endswith(".jpg") or file.endswith(".png") or file.endswith(".jpeg")):
@@ -88,10 +129,24 @@ def list_images_folder(folder):
 
 # List of all the files in the folder
 def listdir_fullpath(d):
+    """
+    List of all the files in the folder
+    Args:
+        d: the folder
+    type:
+        d: str
+    """
     return [os.path.join(d, f) for f in os.listdir(d)]
 
 # import description if there is one
 def import_description(file):
+    """
+    Import description if there is one
+    Args:
+        file: the file
+    type:
+        file: str
+    """
     text= ""
     with open(file, 'r') as f:
         for line in f:
@@ -122,6 +177,17 @@ def import_description(file):
 
 # import text from file from line a to line b
 def import_text_from_file(file, a, b):
+    """
+    Import text from file from line a to line b
+    Args:
+        file: the file
+        a: the first line
+        b: the last line
+    type:
+        file: str
+        a: int
+        b: int
+    """
     with open(file, 'r') as f:
         lines = f.readlines()
     text = ""
@@ -131,6 +197,15 @@ def import_text_from_file(file, a, b):
 
 # import a text at the beginning of a file
 def import_text(file, text):
+    """
+    Import a text at the beginning of a file
+    Args:
+        file: the file
+        text: the text
+    type:
+        file: str
+        text: str
+    """
     with open(file, 'r') as f:
         lines = f.readlines()
     with open(file, 'w') as f:
@@ -138,7 +213,22 @@ def import_text(file, text):
         f.writelines(lines)
 
 # We will convert the files of a folder each by each
-def convert_file(file, old_format, file_format, output_foldername = "", image_folder = ""): 
+def convert_file(file, old_format, file_format, output_foldername = "", image_folder_font_matter = ""):
+    """
+    Convert a file from old_format to file_format
+    Args:
+        file: the file
+        old_format: the format of the file
+        file_format: the format of the new file
+        output_foldername: the folder where the new file will be saved
+        image_folder_font_matter: the folder where the images are saved
+    type:
+        file: str
+        old_format: str
+        file_format: str
+        output_foldername: str
+        image_folder_font_matter: str
+    """
     # Where 'output_filename' is the absolute path leading to the folder which will containe the converted file
     file = os.path.abspath(file)
     if output_foldername == "":
@@ -175,8 +265,8 @@ def convert_file(file, old_format, file_format, output_foldername = "", image_fo
         else:
             output = pypandoc.convert_file(file, format=old_format, to =file_format, outputfile=new_file_name)
         print("File converted in " + output_foldername)
-        if image_folder != "":
-            image = list_images_folder(image_folder)
+        if image_folder_font_matter != "":
+            image = list_images_folder(image_folder_font_matter)
             images = "'\n"+ "image = 'images/post/"+image[random.randint(0, len(image)-1)] # Autimatically choose a random image from the folder (TO IMPROVE)
         else :
             images = ""
@@ -190,7 +280,7 @@ def convert_file(file, old_format, file_format, output_foldername = "", image_fo
         print("bad format")
         global rescue_foldername
         # get parent folder of the folder
-        rescue_foldername = output_foldername + "\\" + "rescue"
+        rescue_foldername = os.path.dirname(output_foldername) + "\\" + "rescue"
         if not os.path.exists(rescue_foldername):
             os.makedirs(rescue_foldername)
         shutil.copy(file, os.path.abspath(rescue_foldername))
@@ -199,12 +289,34 @@ def convert_file(file, old_format, file_format, output_foldername = "", image_fo
 
 # Call the function to convert the files of a list of files with a list of formats
 def convert_multiple_files_with_formats(files, list_format, new_format, output_foldername="", image_folder=""):
+    """
+    Convert multiple files with different formats by calling the function convert_file
+    Args:
+        files: the list of files
+        list_format: the list of formats - the same length as the list of files - to convert the files format by format
+        new_format: the new format
+        output_foldername: the folder where the new files will be saved
+        image_folder: the folder where the images are saved
+    type:
+        files: list
+        list_format: list
+        new_format: str
+        output_foldername: str
+        image_folder: str
+    """
     for format in list_format:
         for file in files:
             convert_file(file, format, new_format, output_foldername, image_folder)
 
 # Return the list of all the formats that are in the folder that we can convert
 def see_all_convertible_format_folder(folder):
+    """
+    Return the list of all the formats that are in the folder that we can convert
+    Args:
+        folder: the folder
+    type:
+        folder: str
+    """
     convertible = pypandoc.get_pandoc_formats()[0] # Files that we can convert | [1] : converted possible files type
     files = []
     for file in listdir_fullpath(folder):
@@ -215,6 +327,13 @@ def see_all_convertible_format_folder(folder):
 
 # Return the list of all the files that we can convert that are present in the folder
 def see_all_convertible_files_folder(folder):
+    """
+    Return the list of all the files that we can convert that are present in the folder
+    Args:
+        folder: the folder
+    type:
+        folder: str
+    """
     convertible = pypandoc.get_pandoc_formats()[0] + pypandoc.get_pandoc_formats()[1] # Files that we can convert | [1] : converted possible files type
     files = []
     for file in listdir_fullpath(folder):
@@ -225,6 +344,19 @@ def see_all_convertible_files_folder(folder):
 
 # Convert only the compatible files of a folder with a new_format into an output_folder
 def convert_folder_convertible(folder, new_format, output_foldername = "", image_folder=""):
+    """
+    Convert only the compatible files of a folder with a new_format into an output_folder
+    Args:
+        folder: the folder
+        new_format: the new format
+        output_foldername: the folder where the new files will be saved
+        image_folder: the folder where the images are saved
+    type:
+        folder: str
+        new_format: str
+        output_foldername: str
+        image_folder: str
+    """
     if output_foldername == "":
         output_foldername = folder
     files = see_all_convertible_files_folder(folder)
@@ -233,6 +365,19 @@ def convert_folder_convertible(folder, new_format, output_foldername = "", image
 
 # Convert the compatible files (and copy the other ones) of a folder with a new_format into an output_folder
 def convert_folder_all_included(folder, new_format, output_foldername = "", image_folder=""):
+    """
+    Convert the compatible files (and copy the other ones) of a folder with a new_format into an output_folder
+    Args:
+        folder: the folder
+        new_format: the new format
+        output_foldername: the folder where the new files will be saved
+        image_folder: the folder where the images are saved
+    type:
+        folder: str
+        new_format: str
+        output_foldername: str
+        image_folder: str
+    """
     if output_foldername == "":
         output_foldername = folder
     files = see_all_convertible_files_folder(folder)
@@ -244,6 +389,21 @@ def convert_folder_all_included(folder, new_format, output_foldername = "", imag
 
 # Replicate and convert somes files in an entirey tree of folders (all of them if convertible == False, only the convertible if convertible == True)
 def convert_tree(folder, new_format, output_foldername = "", image_folder = "", convertible = False):
+    """
+    Replicate and convert somes files in an entirey tree of folders (all of them if convertible == False, only the convertible if convertible == True)
+    Args:
+        folder: the folder
+        new_format: the new format
+        output_foldername: the folder where the new files will be saved
+        image_folder: the folder where the images are saved
+        convertible: if we want to convert only the convertible files or all of them
+    type:
+        folder: str
+        new_format: str
+        output_foldername: str
+        image_folder: str
+        convertible: bool
+    """
     if output_foldername == "":
         output_foldername = folder
     

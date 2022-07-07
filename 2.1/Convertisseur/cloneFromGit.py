@@ -11,7 +11,8 @@ def clone_from_git(git_url, output_folder):
     Clone a git repository from a url.
     :param git_url: url of the git repository
     :param output_folder: path of the output folder
-    :return:
+    :return: the cloned repository
+    
     """
     ## if the folder doesn't exist, create it
     if not os.path.exists(output_folder):
@@ -69,3 +70,15 @@ def change_line(path, text, new_text):
             if line.startswith(text):
                 line = line.replace(text, new_text)
     return ""
+
+# clone branch from git
+def clone_branch(git_url, branch_name, output_folder):
+    repo = Repo.clone_from(git_url, output_folder)
+    repo.git.checkout(branch_name)
+    return repo
+
+# clone folder from git
+def clone_folder(git_url, folder_name, output_folder):
+    repo = Repo.clone_from(git_url, output_folder)
+    repo.git.checkout(folder_name)
+    return repo

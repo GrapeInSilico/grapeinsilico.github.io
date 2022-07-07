@@ -54,7 +54,8 @@ for git in git_url:
     # get directory of the current file
     clone_folder.append(os.path.dirname(os.path.realpath(__file__)) + "\\" + git_name)
     # copy git repo in the current directory
-    cloneFromGit.clone_from_git(git, clone_folder[i])
+    #cloneFromGit.clone_from_git(git, clone_folder[i])
+    cloneFromGit.clone_branch(git, "test-Loaï", clone_folder[i])
     i += 1
 
 print()
