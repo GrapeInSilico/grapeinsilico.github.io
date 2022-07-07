@@ -9,7 +9,8 @@ cd <<website name>>
 git init
 git submodule add <<git adress of the theme you will use to create the website>> themes/<<theme_name>>
 
+Modify the config.toml file to add the theme you want to use
+
 hugo server "-D"
 
 hugo -D
-

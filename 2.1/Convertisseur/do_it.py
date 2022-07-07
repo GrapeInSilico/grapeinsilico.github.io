@@ -17,8 +17,6 @@ print()
 print("Second step: Download goHugo : https://github.com/gohugoio/hugo/releases (we recommand the extended version)")
 print("Then add it to your PATH variable (environnment variable)")
 
-im = Image.open(r'C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\Convertisseur\image_tuto\assets gohugo.png')
-im.show()
 
 print()
 
