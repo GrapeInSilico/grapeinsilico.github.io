@@ -1,9 +1,8 @@
+from lib2to3.pgen2.pgen import generate_grammar
 import pypandoc
 import os
 import shutil
-import random
-from tkinter.filedialog import askopenfilenames, askdirectory
-from tkinter import Tk
+import write
 
 # Return the list of all the formats that are in the folder that we can convert
 def see_all_convertible_format_folder(folder):
@@ -33,14 +32,22 @@ def see_all_convertible_files_folder(folder):
     """
     convertible = pypandoc.get_pandoc_formats()[0] + pypandoc.get_pandoc_formats()[1] # Files that we can convert | [1] : converted possible files type
     covertible_files = []
-    not_convertible_files = []
+    not_convertible_files_images = []
+    not_convertible_files_other = []
+    fold = []
     for file in [os.path.join(folder, f) for f in os.listdir(folder)]:
         index_last_point = file.rfind('.')
         if (pypandoc.normalize_format(file[index_last_point+1:]) in convertible):
             covertible_files.append(file)
+        elif (os.path.isfile(file)):
+            # if the file is an image
+            if (file[index_last_point+1:] == "png" or file[index_last_point+1:] == "jpg" or file[index_last_point+1:] == "jpeg" or file[index_last_point+1:] == "gif"):
+                not_convertible_files_images.append(file)
+            else:
+                not_convertible_files_other.append(file)
         else:
-            not_convertible_files.append(file)
-    return [covertible_files, not_convertible_files]
+            fold.append(file)
+    return [covertible_files, not_convertible_files_images, not_convertible_files_other, fold]
 
 # Convert a file with an olf format to a new format
 # We suppose that the file is convertible
@@ -48,10 +55,18 @@ def convert_file(file, new_format, output_folder = os.getcwd()):
     # Get the format of the file
     old_format = os.path.basename(file).split('.')[-1]
     # Convert the file
+    new_file = output_folder + "\\" + os.path.basename(file).replace(old_format, new_format)
     if (old_format == "ipynb" and new_format == "md"):
-        os.system("jupyter nbconvert --to markdown " + file +" --output " + output_folder + "\\" + os.path.basename(file).replace(old_format, new_format))
+        os.system("jupyter nbconvert --to markdown " + file +" --output " + new_file)
     else:
-        pypandoc.convert_file(file, format=old_format, to = new_format, outputfile= output_folder + "\\" + os.path.basename(file).replace(old_format, new_format))
+        pypandoc.convert_file(file, format=old_format, to = new_format, outputfile= new_file)
+    # Write the file above the converted file
+    write.write_above(new_file, write.generate_text(new_file))
+    # Rename the file if needed (case index.md file)
+    new_file = write.rename(new_file)
+    # Adapting the file if it contains images (rewritte the image path)
+    if (write.detect_image(new_file)):
+        write.rewrite(new_file, "(./", "(/images/post/doc/")
 
 # Convert a list of files by calling the function convert_file
 # We suppose that all the files are convertible
@@ -59,17 +74,60 @@ def convert_files(files, new_format, output_folder = os.getcwd()):
     for file in files:
         convert_file(file, new_format, output_folder)
 
-# Convert a folder by calling the function convert_files
-# Create a new folder with the same base name as the old folder put in an output folder (only concerning the convertible files)
-# Create a new folder with the same base name as the old folder put in an output folder (only concerning the convertible files)
-def convert_folder(folder, new_format, output_folder_convertible = os.getcwd(), output_folder_not_convertible = os.getcwd()):
-    new_output_folder_convertible = output_folder_convertible + "\\" + os.path.basename(folder)
-    os.makedirs(new_output_folder_convertible, exist_ok=True)
-    convert_files(see_all_convertible_files_folder(folder)[0], new_format, new_output_folder_convertible)
-    for file in see_all_convertible_files_folder(folder)[1]:
-        shutil.copy(file, output_folder_not_convertible)
+# Copy a list of files (not convertible) to a folder
+def copy_files(files, output_folder = os.getcwd()):
+    for file in files:
+        shutil.copy(file, output_folder)
 
+# Convert a folder (and its tree) to a new format
+# The output folder is the same folder but with converted files
+def convert_folder(folder, new_format, output_folder = os.getcwd()):
+    # Create the folder if it doesn't exist
+    output_folder = output_folder + "\\" + os.path.basename(folder)
+    os.makedirs(output_folder, exist_ok=True)
+    # Convert all the files in the folder in the new folder
+    files = see_all_convertible_files_folder(folder)
+    convert_files(files[0], new_format, output_folder)
+    copy_files(files[1], output_folder)
+    copy_files(files[2], output_folder)
+    # Convert all the folders in the folder in the new folder
+    for subfolder in files[3]:
+        convert_folder(subfolder, new_format, output_folder)
 
-convert_folder(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\Convertisseur\test", "md")
+# Convert a folder (and its tree) to a new format
+# The output folder is adapted to hugo tree structure
+def convert_folder_2_Hwebsite(folder, new_format, website = os.getcwd(), part_of_website = "", all_as_posts = False):
+    print("folder = ",folder)
+    print("part of web = ",part_of_website)
+    if (not all_as_posts):
+        # Folder containing all the markdown files and subfolders (example : part_of_website = "post")
+        content_folder = website + "\\content" + "\\" + part_of_website + "\\" + os.path.basename(folder)
+        # Image linked to the content (used in it)
+        image_folder = website + "\\static\\images" + "\\" + part_of_website + "\\" + os.path.basename(folder)
+        # object linked to the content (used in it)
+        orther_static_folder = website + "\\static\\other" + "\\" + part_of_website + "\\" +  os.path.basename(folder)
+    else:
+        # Folder containing all the markdown files and subfolders (example : part_of_website = "post")
+        content_folder = website + "\\content" + "\\post" 
+        # Image linked to the content (used in it)
+        image_folder = website + "\\static\\images" + "\\" + part_of_website + "\\" + os.path.basename(folder)
+        # object linked to the content (used in it)
+        orther_static_folder = website + "\\static\\other"+ "\\" + part_of_website + "\\" + os.path.basename(folder)
+    print("content_folder = ",content_folder)
+    # Create these folders if they don't exist
+    os.makedirs(content_folder, exist_ok=True)
+    os.makedirs(image_folder, exist_ok=True)
+    os.makedirs(orther_static_folder, exist_ok=True)
+    # Convert all the files in the folder in the new folder
+    files = see_all_convertible_files_folder(folder)
+    convert_files(files[0], new_format, content_folder)
+    copy_files(files[1], image_folder)
+    copy_files(files[2], orther_static_folder)
+    # Convert all the folders in the folder in the new folder
+    part_of_website = part_of_website + "\\" + os.path.basename(folder)
+    for subfolder in files[3]:
+        convert_folder_2_Hwebsite(subfolder, new_format, website, part_of_website, all_as_posts)
 
-
+import cloneFromGit
+cloneFromGit.clone_from_git("https://github.com/openalea/openalea.rtfd.io", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\Convertisseur\post")
+convert_folder_2_Hwebsite(r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\Convertisseur\post", "md", r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\warudo", all_as_posts=True)
