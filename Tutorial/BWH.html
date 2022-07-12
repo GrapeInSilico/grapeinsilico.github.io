@@ -1,0 +1,292 @@
+<h1 id="description">Description</h1>
+<p>In this tutorial, we will be building our first static website with
+Hugo. You can also find a more detailed tutorial of the Hugo project <a
+href="https://gohugo.io/getting-started/">here</a>. This one aim to be a
+simple introducton to the Hugo project.</p>
+<h1 id="begin-with-hugo">Begin with Hugo</h1>
+<p><a href="https://gohugo.io/">Hugo</a> is a static site generator
+written in <a href="https://go.dev/">Go</a>.</p>
+<figure>
+<img src="gohugo.io.png" alt="goHugo" />
+<figcaption aria-hidden="true">goHugo</figcaption>
+</figure>
+<p>This tutorial will help you to get started with Hugo, givning you a
+solid foundation to build your own static site generator and most
+importantly, it will help you to get familiar with the Hugo build
+process.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="golang">Golang</h3>
+<p>goHugo was written in Go (Go language - Golang), so you need to have
+a Go compiler and Go environment installed.</p>
+<p>Please find the link to download <a
+href="https://go.dev/dl/">goHugo</a></p>
+<figure>
+<img src="./g0.gif" alt="go download page" />
+<figcaption aria-hidden="true">go download page</figcaption>
+</figure>
+<h3 id="hugo">Hugo</h3>
+<h4 id="hugo-version">Hugo version</h4>
+<p>We suggest you to install <strong>Hugo extended version</strong> for
+more convenience.</p>
+<h4 id="download-hugo">Download Hugo</h4>
+<p>There are many ways to install Hugo, we recommand to download it
+directly from the <a
+href="https://github.com/gohugoio/hugo/releases">GitHub repository</a>
+of the project.</p>
+<figure>
+<img src="./g1.gif" alt="hugo download page" />
+<figcaption aria-hidden="true">hugo download page</figcaption>
+</figure>
+<p>Even though you can use the <a
+href="https://gohugo.io/getting-started/installing/">official
+release</a> of Hugo and follow their instructions.</p>
+<h4 id="install-hugo---adding-to-your-path">Install Hugo - adding to
+your PATH</h4>
+<p>If you have downloaded the hugo using the above GitHub link. You will
+need the path to the goHugo executable.</p>
+<p>This is the path to our executable file.</p>
+<figure>
+<img src="./gohugo_file.png" alt="hugo path" />
+<figcaption aria-hidden="true">hugo path</figcaption>
+</figure>
+<p>You should copy the path to the goHugo executable to your PATH
+environment variable.</p>
+<figure>
+<img src="./path.png" alt="path" />
+<figcaption aria-hidden="true">path</figcaption>
+</figure>
+<figure>
+<img src="./path2.png" alt="path" />
+<figcaption aria-hidden="true">path</figcaption>
+</figure>
+<p>Now that you have installed Hugo, you can start using it.</p>
+<h2 id="build-a-site">Build a site</h2>
+<p>First open a terminal and see if Hugo was correctly installed. You
+should see a similar message:</p>
+<figure>
+<img src="./cmd1.png" alt="terminal" />
+<figcaption aria-hidden="true">terminal</figcaption>
+</figure>
+<h3 id="create-the-website-repository">Create the website
+repository</h3>
+<p>First, you need to choose a directory to store your website (in our
+case, we will create it) and go there.</p>
+<p>Then you should run the following command:</p>
+<pre><code>hugo new &lt;&lt;the name of your website&gt;&gt;</code></pre>
+<figure>
+<img src="./cmd2.png" alt="commands to create a new website" />
+<figcaption aria-hidden="true">commands to create a new
+website</figcaption>
+</figure>
+<p>This command will create a new directory called
+<code>&lt;&lt;the name of your website&gt;&gt;</code> with the following
+tree:</p>
+<p><img src="./supr_website.png" alt="basic website structure" />
+(Notice the <code>config.toml</code> file : configuration file)</p>
+<p>You have just created a new blank website.</p>
+<h3 id="preview-of-your-website">Preview of your website</h3>
+<p>To see what your website looks like, you need to go to
+<code>&lt;&lt;the name of your website&gt;&gt;</code> folder</p>
+<pre><code>cd &lt;&lt;the name of your website&gt;&gt;</code></pre>
+<p>And run the following command:</p>
+<pre><code>hugo server -D</code></pre>
+<p><img src="./cmd4.png" alt="commands to preview your website" /> Your
+website should be running on http://localhost:1313/ (or equivalent at
+the bottom of the above image).</p>
+<p>Note: the “-D” option means that hugo will include ‘draft’ pages.</p>
+<p>So far, you can see your blank website.</p>
+<figure>
+<img src="./Blank_page.png" alt="blank website" />
+<figcaption aria-hidden="true">blank website</figcaption>
+</figure>
+<pre><code>Ctrl + C to stop the server</code></pre>
+<p>How about giving it a theme ?</p>
+<h3 id="adding-a-theme">Adding a theme</h3>
+<h4 id="choosing-a-theme">Choosing a theme</h4>
+<p>goHugo provides a large number of themes mainly made by
+individuals.</p>
+<p>You can choose the one you like* <a
+href="https://themes.gohugo.io/">here</a>.</p>
+<p>*: Some themes are made by organizations / communities / companies,
+they may not have the same way of working or the same structure as
+traditionnal ones, for example we recommand to avoid the ‘Academic’
+themes (for now), this tutorial is meant to be an introduction to the
+functionning of Hugo.</p>
+<p>In our case, we will be using the <a
+href="https://themes.gohugo.io/themes/hugo-theme-stack/"><code>stack</code></a>
+theme.</p>
+<figure>
+<img src="./stack.png" alt="stack theme" />
+<figcaption aria-hidden="true">stack theme</figcaption>
+</figure>
+<h4 id="installing-a-theme">Installing a theme</h4>
+<p>First of all, at the bottom of your theme page, you may find
+instructions to install the theme and to use it correctly - you should
+read them if you face any problem building your website.</p>
+<p>If you click on the download button, you will be redirected to the
+GitHub repository of the theme.</p>
+<figure>
+<img src="./stack_git.png" alt="download theme" />
+<figcaption aria-hidden="true">download theme</figcaption>
+</figure>
+<p><strong>You should copy its URL</strong>.</p>
+<h4 id="installing-the-theme">Installing the theme</h4>
+<p>With a terminal, go to your
+<code>&lt;&lt;the name of your website&gt;&gt;</code> folder and type
+the following commands:</p>
+<pre><code>git init
+git submodule add &lt;&lt;git adress of the theme you will use to create the website&gt;&gt; themes/&lt;&lt;theme_name&gt;&gt;</code></pre>
+<p>This will clone the theme repository into the <code>themes</code>
+folder.</p>
+<figure>
+<img src="./exp2.png" alt="theme git clone" />
+<figcaption aria-hidden="true">theme git clone</figcaption>
+</figure>
+<h4 id="changing-the-configuration-file">Changing the configuration
+file</h4>
+<p>The configuration file is located in the <a
+href="#create-the-website-repository"><code>&lt;&lt;the name of your website&gt;&gt;</code></a>
+folder.</p>
+<p>You may edit it to your needs, but there are some things you should
+know:</p>
+<ul>
+<li><p>Hugo’ default configuration file is <code>config.toml</code> (or
+<code>.yaml</code> or <code>.json</code>).</p>
+<ul>
+<li><a href="https://toml.io/en/">Syntax-toml</a></li>
+<li><a
+href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">Syntax-yaml</a></li>
+<li><a
+href="https://www.w3schools.com/js/js_json_syntax.asp">Syntax-json</a></li>
+</ul></li>
+<li><p>The configuration file consists in a succession line defining the
+website behavior. For instance, you can define the title of your website
+by adding the line :
+<code>title = '&lt;&lt;title of your site&gt;&gt;'</code>. Same for the
+author, the default language, the default theme, etc.</p>
+<ul>
+<li>You can add a theme by adding the following line :
+<code>theme = '&lt;&lt;theme_name&gt;&gt;'</code>.</li>
+</ul></li>
+</ul>
+<p>It should look like this:</p>
+<figure>
+<img src="./vs1.png" alt="config file" />
+<figcaption aria-hidden="true">config file</figcaption>
+</figure>
+<h4 id="noticing-the-changes">Noticing the changes</h4>
+<p>When you have finished installing the theme, if you type again the <a
+href="#preview-of-your-website">commands</a>:</p>
+<pre><code>cd &lt;&lt;the name of your website&gt;&gt;</code></pre>
+<p>And run the following command:</p>
+<pre><code>hugo server -D</code></pre>
+<p>You should see the theme applied to your website.</p>
+<figure>
+<img src="./p1.png" alt="preview" />
+<figcaption aria-hidden="true">preview</figcaption>
+</figure>
+<p>Bettter, but still quite impersonal.</p>
+<h3 id="configuration-file---make-further-changes">Configuration file -
+Make further changes</h3>
+<p>Another good way for getting familiar with the configuration file is
+to see an example of it.</p>
+<p>If you go to the
+<code>&lt;&lt;the name of your website&gt;&gt;/themes/&lt;&lt;theme_name&gt;&gt;</code>,
+you will find a folder called <code>exampleSite</code> which gives you
+an example of a full site using this theme.</p>
+<p>You can copy copy its configuration file and override the previous
+one in your <code>&lt;&lt;the name of your website&gt;&gt;</code> folder
+and edit it to your needs (don’t forget to erase / delete the old
+one).</p>
+<p>Note: you may need to change the <code>theme</code> line again</p>
+<p>In our case, it looks like this :</p>
+<p><img src="./vs2.png" alt="new config file" /> Note: always save your
+changes <code>Ctrl + S</code></p>
+<p>More information <a
+href="https://gohugo.io/getting-started/configuration/">here</a>.</p>
+<p><strong>In other words</strong></p>
+<figure>
+<img src="./demo1.gif" alt="demo" />
+<figcaption aria-hidden="true">demo</figcaption>
+</figure>
+<h3 id="adding-content-to-your-website">Adding content to your
+website</h3>
+<p>Now, time for adding new pages.</p>
+<p>You can create a new blank post by typing the following command (in
+your <code>&lt;&lt;the name of your website&gt;&gt;</code> folder):</p>
+<pre><code>hugo new post/&lt;&lt;name of your post&gt;&gt;</code></pre>
+<p>This will create a new folder called <code>post</code> in the content
+folder and a new file called
+<code>&lt;&lt;name of your post&gt;&gt;</code> in this new folder. When
+reloading your website, you should see changes on the page.</p>
+<figure>
+<img src="./post1.png" alt="new post" />
+<figcaption aria-hidden="true">new post</figcaption>
+</figure>
+<p><strong>Notice</strong> : most of the themes take into account ‘post’
+folders, however, some themes have other way of working (aka
+‘Academic’).</p>
+<p>It is a blank page, but you can add content to it.</p>
+<figure>
+<img src="./vs3.png" alt="new post" />
+<figcaption aria-hidden="true">new post</figcaption>
+</figure>
+<h4 id="font-matter">Font Matter</h4>
+<p>The <a
+href="https://gohugo.io/content-management/front-matter/"><em>font
+matter</em></a> is the header of your new post. It contains meta-data
+that helps Hugo to understand the content of your post.</p>
+<ul>
+<li>It begins with the line <code>+++</code> and ends with the line
+<code>+++</code> if your configuration file is a <code>.toml</code>
+file.</li>
+<li>It begins with the line <code>---</code> and ends with the line
+<code>---</code> if your configuration file is a <code>.yaml</code>
+file.</li>
+<li>It begins with the line <code>{</code> and ends with the line
+<code>}</code> if your configuration file is a <code>.json</code> file.
+(Copilot)</li>
+</ul>
+<p>The content of your font matter should be written following the <a
+href="#changing-the-configuration-file">syntax</a> of the configuration
+file.</p>
+<p>Everything in the font matter is optional. However, having at least a
+title to your post is quite recommended.</p>
+<p>For more information, see the <a
+href="https://gohugo.io/content-management/front-matter/">documentation</a>.</p>
+<h5 id="adding-a-description-to-your-post">Adding a description to your
+post</h5>
+<p>Just open your post file and add the following line :</p>
+<ul>
+<li>toml</li>
+</ul>
+<pre><code>description = &#39;&lt;&lt;description of your post&gt;&gt;&#39; </code></pre>
+<ul>
+<li>yaml</li>
+</ul>
+<pre><code>description : &#39;&lt;&lt;description of your post&gt;&gt;&#39; </code></pre>
+<figure>
+<img src="./description.png" alt="description" />
+<figcaption aria-hidden="true">description</figcaption>
+</figure>
+<h5 id="adding-custodial-image-not-compatible-with-all-themes">Adding
+custodial image (not compatible with all themes)</h5>
+<p>The first thing to do is to import the image in your website.</p>
+<p>More precisely, you need to add it to your static folder(Hugo
+differentiate the textual content of a post and its static data).</p>
+<p>In our example, we will add <a href="#begin-with-hugo">this</a> image
+to the new folder <code>static/images/font_matter_images/</code>.</p>
+<p>Then you need to add the following line to the font matter of your
+post :</p>
+<ul>
+<li>toml</li>
+</ul>
+<pre><code>image = &#39;images/font_matter_images/&lt;&lt;name of the image&gt;&gt;&#39; </code></pre>
+<ul>
+<li>yaml</li>
+</ul>
+<pre><code>image : &#39;images/font_matter_images/&lt;&lt;name of the image&gt;&gt;&#39; </code></pre>
+<figure>
+<img src="./vs4.png" alt="adding image head of post" />
+<figcaption aria-hidden="true">adding image head of post</figcaption>
+</figure>

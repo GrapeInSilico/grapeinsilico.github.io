@@ -3,9 +3,6 @@ from git import Repo
 from tkinter import Tk 
 from tkinter.filedialog import askdirectory, askopenfilenames
 
-git_url = r"https://github.com/openalea/openalea.rtfd.io"
-output_folder = r"C:\Users\gandeell\Documents\GitHub\grapeinsilico.github.io\2.1\Convertisseur\openalea"
-
 def clone_from_git(git_url, output_folder):
     """
     Clone a git repository from a url.
@@ -28,6 +25,10 @@ def clone_from_git(git_url, output_folder):
 
 # function to ask for a directory
 def ask_directory():
+    """
+    Ask for a directory
+    :return: the path of the directory
+    """
     root = Tk()
     root.withdraw()
     root.attributes('-topmost', True)
@@ -36,6 +37,10 @@ def ask_directory():
 
 # function to ask for images
 def ask_images():
+    """
+    Ask for images
+    :return: the path of the images
+    """
     root = Tk()
     root.withdraw()
     root.attributes('-topmost', True)
@@ -49,6 +54,12 @@ def ask_images():
 
 # find file in tree
 def find_file(path, filename):
+    """
+    Find a file in a tree
+    :param path: the path of the tree
+    :param filename: the name of the file
+    :return: the path of the file
+    """
     for root, dirs, files in os.walk(path):
         if filename in files:
             return os.path.abspath(os.path.join(root, filename))
@@ -56,6 +67,12 @@ def find_file(path, filename):
 
 # find folder in tree
 def find_folder(path, foldername):
+    """
+    Find a folder in a tree
+    :param path: the path of the tree
+    :param foldername: the name of the folder
+    :return: the path of the folder
+    """
     for root, dirs, files in os.walk(path):
         if foldername in dirs:
             return os.path.abspath(os.path.join(root, foldername))
@@ -82,3 +99,4 @@ def clone_folder(git_url, folder_name, output_folder):
     repo = Repo.clone_from(git_url, output_folder)
     repo.git.checkout(folder_name)
     return repo
+
