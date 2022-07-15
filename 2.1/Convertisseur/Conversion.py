@@ -74,7 +74,8 @@ def convert_file(file, new_format, output_folder = os.getcwd()):
     new_file = output_folder + "\\" + os.path.basename(file).replace(old_format, new_format)
     print("Converting " + file + " to " + new_file)
     if (old_format == "ipynb" and new_format == "md"):
-        os.system("jupyter nbconvert --to markdown " + file +" --output " + new_file)
+        #jupyter nbconvert --Preprocessor.enabled=True --execute --ConvertFiguresPreprocessor.enabled=True --ConvertFiguresPreprocessor.from_format="ipynb"--ConvertFiguresPreprocessor.to_format="html" --ExecutePreprocessor.enabled=True --ExecutePreprocessor.allow_errors=True --ExtractOutputPreprocessor.enabled=True --to html "hydroshoot_grapevine.ipynb" --output "hydro.html"
+        os.system('jupyter nbconvert --to markdown "' + file +'" --output "' + new_file +'"' )
     else:
         pypandoc.convert_file(file, format=old_format, to = new_format, outputfile= new_file)
     # Write the file above the converted file
