@@ -1,9 +1,10 @@
 import os
-from git import Repo
-from tkinter import Tk 
+from git import GitCommandError, Repo
+from tkinter import Tk
 from tkinter.filedialog import askdirectory, askopenfilenames
 
 # Clone a git repository from a url, ask for a directory and ask for images
+
 
 def clone_from_git(git_url, output_folder):
     """
@@ -11,15 +12,17 @@ def clone_from_git(git_url, output_folder):
     :param git_url: url of the git repository
     :param output_folder: path of the output folder
     :return: the cloned repository
-    
+
     """
-    ## if the folder doesn't exist, create it
+    # if the folder doesn't exist, create it
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
     # the git repository has aleady been cloned
-    if os.path.exists(os.path.join(output_folder, ".git")):
-        print("The git repository has already been cloned")
-    repo = Repo.clone_from(git_url, output_folder)
+    try:
+        repo = Repo.clone_from(git_url, output_folder)
+    except GitCommandError:
+        print("The repository has already been cloned")
+        repo = Repo(output_folder) 
     return repo
 
 
@@ -35,10 +38,13 @@ def ask_directory():
     root = Tk()
     root.withdraw()
     root.attributes('-topmost', True)
-    directory = askdirectory(initialdir=os.getcwd(), title='Please select a directory')
+    directory = askdirectory(initialdir=os.getcwd(),
+                             title='Please select a directory')
     return directory
 
 # function to ask for images
+
+
 def ask_images():
     """
     Ask for images
@@ -47,7 +53,8 @@ def ask_images():
     root = Tk()
     root.withdraw()
     root.attributes('-topmost', True)
-    directory = askopenfilenames(initialdir=os.getcwd(), title='Please select a directory')
+    directory = askopenfilenames(
+        initialdir=os.getcwd(), title='Please select a directory')
     # only keep image files
     images = []
     for image in directory:
@@ -56,6 +63,8 @@ def ask_images():
     return images
 
 # find file in tree
+
+
 def find_file(path, filename):
     """
     Find a file in a tree and return the path of the file
@@ -69,6 +78,8 @@ def find_file(path, filename):
     return ""
 
 # find folder in tree
+
+
 def find_folder(path, foldername):
     """
     Find a folder in a tree and return the path of the folder
@@ -81,4 +92,18 @@ def find_folder(path, foldername):
             return os.path.abspath(os.path.join(root, foldername))
     return ""
 
+# remove empty folders in tree recursively
+def remove_empty_folders_recursively(path):
+    """
+    Remove empty folders in a tree recursively
+    :param path: the path of the tree
+    """
+    for root, dirs, files in os.walk(path):
+        for dir in dirs:
+            if not os.listdir(os.path.join(root, dir)):
+                os.rmdir(os.path.join(root, dir))
+                remove_empty_folders_recursively(os.path.dirname(dir))
+        if not os.listdir(root):
+            os.rmdir(root)
+    print("No more empty folders ! ")
 

@@ -1,10 +1,10 @@
 import os
 from difflib import get_close_matches
-import Conversion
+from random import choice
 
-
-global i, inde
+global i, j, inde
 i = 0
+j = 0
 inde = 0
 
 # renaming file if needed
@@ -23,6 +23,14 @@ def rename(file):
         # change the name of the file
         os.rename(file, os.path.dirname(file) + "\\" + os.path.basename(file).split('/')[-1].split('.')[0] + str(inde) + ".md")
         return os.path.dirname(file) + "\\" + os.path.basename(file).split('/')[-1].split('.')[0] + str(inde) + ".md"
+    
+    # if there is another file with the same name, add i to the name
+    if os.path.exists(file):
+        global j
+        j += 1
+        # change the name of the file
+        os.rename(file, os.path.dirname(file) + "\\" + os.path.basename(file).split('/')[-1].split('.')[0] + str(j) + ".md")
+        return os.path.dirname(file) + "\\" + os.path.basename(file).split('/')[-1].split('.')[0] + str(j) + ".md"
     return file
 
 # write text at the begining of a file
@@ -98,7 +106,7 @@ def import_description(file):
     return text.replace("\n", " ").replace("#", "").replace("`", " ").replace("'"," ")
 
 # generate the text to write at the begining of a file
-def generate_text(file, extension_config):
+def generate_text(file, image_list_window, extension_config):
     """
     Generate the text to write at the begining of a file (font matter: title, description)
     Args:
@@ -113,14 +121,38 @@ def generate_text(file, extension_config):
         # Image part yet missing
         text += "slug = 'post" + str(i) + "'\n"
         text += "description = '" + import_description(file) +"'\n" + "disableComments = true\n"
-        text = text + "+++" + "\n\n"
+
     else: # extension_config == "yaml"
         text = "---\n" + "title: '" + get_title(file) + "'\n"
         # Image part yet missing
         text += "slug: 'post" + str(i) + "'\n"
         text += "description: '" + import_description(file) + "'\n" + "disableComments: 'true'\n"
-        text = text + "---\n\n"
+
+    text += import_window_image(image_list_window, extension_config)
+    text = text + "+++" + "\n\n"
+    
     return text
+
+# import image for window of content if requiered
+def import_window_image(image_list_window, extension_config):
+    """
+    Import image for window of content if requiered
+    Args:
+        image_list_window: the list of image to import
+    type:
+        image_list_window: list
+    """
+    list_window_images = image_list_window
+    if list_window_images == []:
+        return ""
+    else:
+        path_image = str(choice(list_window_images))
+        if extension_config == "toml":
+            return "image = '" + path_image[path_image.rfind("static\\" + "images") + 6:].replace("\\", "/") + "'\n"
+        elif extension_config == "yaml":
+            return "image: '" + path_image[path_image.rfind("static\\" + "images") + 6:].replace("\\", "/") + "'\n"
+        else : # todo
+            return ""
 
 # detect image in a markdown file
 def detect_image_in_file(file):

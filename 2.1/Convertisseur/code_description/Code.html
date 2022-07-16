@@ -209,5 +209,35 @@ give each file of the content folder a header.</li>
 <li>do_it.py : basically call all the other functions -&gt; no
 code.</li>
 </ul>
+<h2 id="some-explanation-about-the-code">Some explanation about the
+code</h2>
+<h3 id="conversion.py">Conversion.py</h3>
+<p><em>pypandoc</em> is a Python library that allows to convert files
+from one format to another. It contains function such as :</p>
+<ul>
+<li><code>convert_file</code> : Convert pandoc file from one format to
+another.</li>
+<li><code>get_pandoc_formats()</code> : Return a list of all the formats
+that can be converted. See the pandoc documentation for more <a
+href="https://pandoc.org/index.html">information</a>.
+<ul>
+<li>[0] -&gt; conversion to</li>
+<li>[1] -&gt; conversion from We will mostly be interested in the [0]
+part of the list</li>
+</ul></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<p>Basically :</p>
+<ol type="1">
+<li>Ask the user for the name of the folder where the website will be
+generated.</li>
+<li>Ask the user for the repository to clone from GitHub.</li>
+<li>Ask the user for the theme to use.</li>
+<li>Copy the example configuration file and paste it in the folder where
+the website will be generated.</li>
+<li>Convert the files.</li>
+<li>Write above the files.</li>
+<li>Copy the example data folder</li>
+</ol>
 </body>
 </html>

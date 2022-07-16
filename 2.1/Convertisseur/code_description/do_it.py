@@ -52,7 +52,6 @@ for git in git_url:
     clone_folder.append(os.path.dirname(os.path.realpath(__file__)) + "\\" + git_name)
     # copy git repo in the current directory
     cloneFromGit.clone_from_git(git, clone_folder[i])
-    #cloneFromGit.clone_branch(git, "test-Loaï", clone_folder[i])
     i += 1
 
 print()
@@ -60,12 +59,17 @@ print("Fifth step: choose the theme that you want to use : https://themes.gohugo
 theme_url = input("Please return its git repository, for example : https://github.com/CaiJimmy/hugo-theme-stack \n")
 subprocess.call("cd " + site_folder + "\\" + name + "&& git init && git submodule add " + theme_url + " themes/" + theme_url.split("/")[-1], shell=True)
 
-print("Select the images you want to use in your website")
-image_list = cloneFromGit.ask_images()
-image_folder = site_folder + "\\" + name + "\\" + "static\\" + "images"
-os.makedirs(image_folder + "\\" + "post")
-for image in image_list:
-    shutil.copy(image, image_folder + "\\post\\" + os.path.basename(image))
+if input("Would you like some window images to be added to your website ? (y/n) \n") == "y":
+    print("Select the images you want to use in your website")
+    image_list = cloneFromGit.ask_images()
+    image_folder = site_folder + "\\" + name + "\\" + "static\\" + "images"
+    os.makedirs(image_folder + "\\" + "window")
+    for image in image_list:
+        image_window = image_folder + "\\window\\" + os.path.basename(image)
+        shutil.copy(image, image_window)
+        Conversion.image_list_window.append(image_window)
+else :
+    print("No window images will be added to your website")
 
 print()
 print("Configuring config.toml")
@@ -107,9 +111,18 @@ for c_f in clone_folder:
     Conversion.convert_folder_2_Hwebsite(c_f, new_format, site_folder + "\\" + name, part_of_website = "", all_as_posts = True)
     Conversion.adapt_images()
 
+cloneFromGit.remove_empty_folders_recursively(site_folder + "\\" + name + "\\" + "static")
 
 
+print()
+print("copying the data folder from the example")
+data_folder = site_folder + "\\" + name + "\\" + "data"
+data_exemple_folder = site_folder + "\\" + name + "\\" + "themes" + "\\" + theme_url.split("/")[-1] + "\\" + "exampleSite" + "\\" + "data"
 
+shutil.rmtree(data_folder)
+shutil.copytree(data_exemple_folder, data_folder)
+
+print("data folder copied")
 print()
 print("lets see the website :")
 #import webbrowser
@@ -120,3 +133,6 @@ print("lets see the website :")
 
 print()
 print("Done ! You can now see your website ")
+
+print()
+print("You should now finish it")
