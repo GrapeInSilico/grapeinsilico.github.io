@@ -118,6 +118,10 @@ In the case of the notebook files, we use the `jupyter-nbconvert` command to con
     -> If the code sudenly stops when converting the notebook, it is because the command is not found.
     Note : a library called `nbconvert` seems to exist (not found).
 
+    Other ideas :
+    - nbConvert preprocessor
+    - nbformat ?
+
 
 ### Lack of efficiency
 

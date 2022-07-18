@@ -136,3 +136,5 @@ In the case of the notebook files, we use the `jupyter-nbconvert` command to con
 
 - Error detecting the description in a document (especially if the description does not immediately follow the title) ?
 
+
+https://www.youtube.com/watch?v=oUjk6wpJn7I&t=404s
