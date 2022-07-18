@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Code</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="description">Description</h1>
+<p>This description aim to describe the code that I wrote: how it works
+and its limits.</p>
+<h1 id="code">Code</h1>
+<p>Hugo is a static site generator written in Go.</p>
+<p>When we create a website using Hugo, we automatically create a tree
+of folders and files that will be used to generate the website.</p>
+<figure>
+<img src="./hugo_folder.png" alt="tree" />
+<figcaption aria-hidden="true">tree</figcaption>
+</figure>
+<p>In this tree we can see :</p>
+<ul>
+<li>A <code>content</code> folder that contains all the written files
+(all the <strong>text</strong> files) -&gt; Markdown’ with a special
+header.</li>
+</ul>
+<p>For example, this file contains a header (between the
+<code>---</code>) and some text (which can consist in written text or
+imports of static documents -&gt; for example images).</p>
+<figure>
+<img src="./md1.png" alt="index.md" />
+<figcaption aria-hidden="true">index.md</figcaption>
+</figure>
+<ul>
+<li><p>A static folder that contains all the static documents -&gt;
+images, css, js, …</p></li>
+<li><p>A data folder that contains some data files -&gt; json, yml, …
+(not the configuration file thow)</p></li>
+<li><p>A theme folder that contains the theme we want to use.</p></li>
+</ul>
+<h2 id="the-idea">The idea</h2>
+<p>The first idea consisted in doing all the task you read on the
+tutorial in order to build a website without writting any code.</p>
+<p>Taking a repository on GitHub (all its documents) -&gt; create a
+website out of it</p>
+<h2 id="the-structure">The structure</h2>
+<p>The code is made of 4 files:</p>
+<ul>
+<li>cloneFromGit.py : contain a function which clone a repository from
+GitHub <strong>&amp;</strong> contains all user interface functions (ask
+for folders / files, etc.)</li>
+<li>Conversion.py : contain functions made to convert files from one
+format to markdown -&gt; make these files “content folder friendly” (if
+possible)</li>
+<li>write.py : contain functions made to write the files in order to
+give each file of the content folder a header.</li>
+<li>do_it.py : basically call all the other functions -&gt; no
+code.</li>
+</ul>
+<h2 id="some-explanation-about-the-code">Some explanation about the
+code</h2>
+<h3 id="conversion.py">Conversion.py</h3>
+<p><em>pypandoc</em> is a Python library that allows to convert files
+from one format to another. It contains function such as :</p>
+<ul>
+<li><code>convert_file</code> : Convert pandoc file from one format to
+another.</li>
+<li><code>get_pandoc_formats()</code> : Return a list of all the formats
+that can be converted. See the pandoc documentation for more <a
+href="https://pandoc.org/index.html">information</a>.
+<ul>
+<li>[0] -&gt; conversion to</li>
+<li>[1] -&gt; conversion from We will mostly be interested in the [0]
+part of the list</li>
+</ul></li>
+</ul>
+<p>Everything in this file turn around the <code>convert_file</code>
+function. Converting multiple files to markdown -&gt; Calling this
+function several times with different paths as parameters (not optimal,
+pypandoc includes a command which convert a tree of folders - problems
+using it).</p>
+<h3 id="write.py">write.py</h3>
+<p>This file main issue is to deal with the header of the files
+(functions called when one of the files has just been converted to
+markdown).</p>
+<ul>
+<li>knowing the configuration file extension is primordial to know how
+to write the header.</li>
+<li>2 types of functions :
+<ul>
+<li><p>Some used during the execution of a “Convert_folder” function
+-&gt; writing the header of the converted file.</p></li>
+<li><p>The other functions main purpose adapt the links of the imports
+to the new website. -&gt; In a Hugo website, the links are relative to
+the website structure.</p>
+<p>Meaning, if an image is imported in a file, most of the time the
+image is imported with a relative path such as
+<code>../images/thing.png</code>.</p>
+<p>When we convert the file to markdown and place it in the content
+folder, we need to change this path to something like
+<code>/images/thing.png</code> (here the parent folder of images if the
+<code>static</code> folder). -&gt; These functions are used after all
+the document style files have been converted and all the images have
+been placed into an <code>static/image</code> folder</p></li>
+</ul></li>
+</ul>
+<h3 id="clonefromgit.py">cloneFromGit.py</h3>
+<p>File made to download a repository from GitHub (we could improve it
+by only downloading the files we need out of a repository). Also
+contains all the user interface functions (ask for directory, ask for
+images). Finally, it contains functions made to copy some “example
+files” out of the ‘theme’ folder (<code>data</code> folder or
+<code>configuration</code> file).</p>
+<h3 id="do_it.py">do_it.py</h3>
+<p>Just a simple python script that calls all the other functions in the
+right order.</p>
+<h2 id="basics">Basics</h2>
+<p>Basically :</p>
+<ol type="1">
+<li>Ask the user for the name of the folder where the website will be
+generated.</li>
+<li>Ask the user for the repository to clone from GitHub.</li>
+<li>Ask the user for the theme to use.</li>
+<li>Copy the example configuration file and paste it in the folder where
+the website will be generated.</li>
+<li>Convert the files.</li>
+<li>Write above the files.</li>
+<li>Copy the example data folder</li>
+</ol>
+<p>This code only role is to take some files from a repository,
+differentiate the doc files from the static files (images, …), convert
+them to markdown, write a header on top of each of them, place them (and
+their static files) in the “right”** hugo folder and eventually copy
+some data files or configuration files from the exemple often given with
+the Hugo theme folder.</p>
+<h2 id="problems">Problems</h2>
+<h3 id="themes-structuration">Themes structuration</h3>
+<ul>
+<li>The structure of the content folder of the Hugo website depend of
+theme used.
+<ul>
+<li>In the theme “Massively”, (almost) all the markdown files should be
+placed in a ‘post’ folder.</li>
+<li>In all of wowchemy’ theme, the markdown files should be placed if
+folders as followed : <img src="./wowchemy.png" alt="wow" /></li>
+<li>Other themes, do not bother with the structure of the content folder
+and just show everything (stack for example).</li>
+<li>etc</li>
+</ul></li>
+</ul>
+<p>So the output folder of the Hugo website should be taken into account
+before launching the code, in the <code>convert_folder_2_Hwebsite</code>
+function of the <code>Conversion.py</code> file, there is an parameter
+named <code>all_as_posts</code> which (if <code>all_as_posts</code> ==
+‘True’) will place all the converted files in a folder called ‘post’
+(name can be change by changing line 187), it can also (if
+<code>all_as_posts</code> == False) just keep the original tree
+structure of the repository.</p>
+<p>In many cases, some manual work is needed to make the website look
+like the one you want.</p>
+<h3 id="librarys-used">Librarys used</h3>
+<p>To convert all the document-type files to markdown, we use the <a
+href="https://pypi.org/project/pypandoc/">pypandoc</a> library (pandoc).
+However, during the conversion (or during the placement of the files in
+the right folder), some files may keep some unecessary lines (like
+‘::toctree’ - RST file).</p>
+<p>In the case of the notebook files, we use the
+<code>jupyter-nbconvert</code> command to convert the files to markdown.
+It removes a lot of the useless lines and gives us the opportunity (at
+least in theory) to execute them and to save their widgets. -&gt; If the
+code sudenly stops when converting the notebook, it is because the
+command is not found. Note : a library called <code>nbconvert</code>
+seems to exist (not found).</p>
+<h3 id="lack-of-efficiency">Lack of efficiency</h3>
+<ul>
+<li>Too many for loops.</li>
+<li>Libraries used are not optimized / may have some functions “to do
+the job”.</li>
+<li>Converting each file, one by one.</li>
+<li>Reading some files multiple times.</li>
+<li>(Re-)Writing some files multiple times.</li>
+<li>Write.py - <code>search_file_path</code> function -&gt; strange
+(get_close_match).</li>
+</ul>
+<h3 id="errors">Errors</h3>
+<ul>
+<li><p>If the theme doesn’t content a example file called
+<code>config.yaml</code> or <code>config.toml</code></p></li>
+<li><p>If there is a structural probleme with the theme used</p></li>
+<li><p>Librarys problems (see above)</p></li>
+<li><p>Error detecting the description in a document (especially if the
+description does not immediately follow the title) ?</p></li>
+</ul>
+</body>
+</html>

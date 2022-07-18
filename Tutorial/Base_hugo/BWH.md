@@ -268,4 +268,12 @@ image : 'images/font_matter_images/<<name of the image>>'
 ![adding image head of post](./vs4.png)
 
 
+## Wanna see the end result ?
 
+Type the following command in your terminal :
+
+```
+hugo
+```
+
+See the public folder of your website.
