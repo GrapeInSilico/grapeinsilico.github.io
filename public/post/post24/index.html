@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+	<head>
+		<title>HydroShoot Tutorial - Grapevine &middot; The grape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		
+		
+		<link rel="stylesheet" href="../../assets/css/main.min.css">
+		
+		
+		<link rel="shortcut icon" href="images/icons/4698354.png">
+		
+		
+		<noscript><link rel="stylesheet" href='../../assets/css/noscript.css' /></noscript>
+		
+	</head>
+
+	<body lang='en' class="is-preload">
+
+		
+			<div id="wrapper">
+
+                
+<header id="header">
+    <a href='../../' class="logo">The grape</a>
+</header>
+
+                
+
+
+<nav id="nav">
+    <ul class="links">
+        <li class=""><a href='../../'>The grape</a></li><li class=""><a href='../../second_page'>Second page</a></li><li class=""><a href='../../third_page'>Caribu</a></li><li class=""><a href='../../fourth_page'>Stathis</a></li><li class=""><a href='../../hundred_page'>Caribu 2</a></li>
+        <li><a href='../../#footer'>Contact</a></li>
+        
+        
+    </ul>
+    
+    <ul class="icons">
+        
+        
+        
+        
+        <li><a href="https://www.linkedin.com" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        
+        
+        <li><a href="https://github.com/openalea" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        
+        
+        
+        
+        
+    </ul>
+    
+</nav>
+
+
+				
+					<div id="main">
+
+						
+                        <section class="post">
+                            <header class="major">
+                                
+                                <h1>HydroShoot Tutorial - Grapevine</h1>
+                                <p>[HydroShoot](https://hydroshoot.readthedocs.io) is a functional-structural plant model that simulates the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, at the organ level.In this **tutorial**, we will :* reconstruct in 3D the shoot architecture of a vine from plant digitalization data</p>
+                            </header>
+                            
+                            <div class="image main"><img src="../../images/window/photo-1572360678077-0ab5ce1be418.jpg" alt="" /></div>
+                            
+                            <h1 id="hydroshoot-tutorial---grapevine">HydroShoot Tutorial - Grapevine</h1>
+<h3 id="authors--ralbasha-cfournier-cpradal-mchelle-ja-prieto-glouarn-tsimonneau-elebon">Authors : R.Albasha, C.Fournier, C.Pradal, M.Chelle, J.A Prieto, G.Louarn, T.Simonneau, E.Lebon</h3>
+<h3 id="publication--httpsdoiorg101093insilicoplantsdiz007">Publication : <a href="https://doi.org/10.1093/insilicoplants/diz007">https://doi.org/10.1093/insilicoplants/diz007</a></h3>
+<p><a href="https://hydroshoot.readthedocs.io">HydroShoot</a> is a functional-structural plant model that simulates the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, at the organ level.</p>
+<p>In this <strong>tutorial</strong>, we will :</p>
+<ul>
+<li>reconstruct in 3D the shoot architecture of a vine from plant digitalization data</li>
+<li>simulate hydraulic structure, gas and energy exchange dynamics</li>
+</ul>
+<h2 id="3d-reconstruction-of-vine-architecture">3D reconstruction of vine architecture</h2>
+<p>Let&rsquo;s import all the packages we need for this tutorial.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> os <span style="color:#f92672">import</span> getcwd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> oawidgets.plantgl <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> oawidgets.mtg <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openalea.mtg <span style="color:#f92672">import</span> traversal
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openalea.plantgl.all <span style="color:#f92672">import</span> Scene
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> hydroshoot <span style="color:#f92672">import</span> architecture, display, model
+</span></span></code></pre></div><pre><code>NOT using graph editor observer No module named grapheditor
+</code></pre>
+<p>We load the shoot architecture of a vine from plant digitalization data with HydroShoot which will return a Multi-scale Tree Graph. Then, we display it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Path for plant digitalization data.</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> architecture<span style="color:#f92672">.</span>vine_mtg(<span style="color:#e6db74">&#39;grapevine_pot.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plot(g)
+</span></span></code></pre></div><pre><code>---------------------------------------------------------------------------
+
+IOError                                   Traceback (most recent call last)
+
+&lt;ipython-input-2-2de76fc3583b&gt; in &lt;module&gt;()
+      1 # Path for plant digitalization data.
+----&gt; 2 g = architecture.vine_mtg('grapevine_pot.csv')
+      3 
+      4 plot(g)
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/hydroshoot-1.0.0-py2.7.egg/hydroshoot/architecture.pyc in vine_mtg(file_path)
+    154 #connect_r -&gt; connect_inI
+    155 
+--&gt; 156     table = read_csv(file_path,sep=';',decimal='.',header=0)
+    157 
+    158     g = mtg.MTG()
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/pandas/io/parsers.pyc in parser_f(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, escapechar, comment, encoding, dialect, tupleize_cols, error_bad_lines, warn_bad_lines, skipfooter, doublequote, delim_whitespace, low_memory, memory_map, float_precision)
+    676                     skip_blank_lines=skip_blank_lines)
+    677 
+--&gt; 678         return _read(filepath_or_buffer, kwds)
+    679 
+    680     parser_f.__name__ = name
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/pandas/io/parsers.pyc in _read(filepath_or_buffer, kwds)
+    438 
+    439     # Create the parser.
+--&gt; 440     parser = TextFileReader(filepath_or_buffer, **kwds)
+    441 
+    442     if chunksize or iterator:
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/pandas/io/parsers.pyc in __init__(self, f, engine, **kwds)
+    785             self.options['has_index_names'] = kwds['has_index_names']
+    786 
+--&gt; 787         self._make_engine(self.engine)
+    788 
+    789     def close(self):
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/pandas/io/parsers.pyc in _make_engine(self, engine)
+   1012     def _make_engine(self, engine='c'):
+   1013         if engine == 'c':
+-&gt; 1014             self._engine = CParserWrapper(self.f, **self.options)
+   1015         else:
+   1016             if engine == 'python':
+
+
+/home/bbrument/miniconda3/envs/notebook_env/lib/python2.7/site-packages/pandas/io/parsers.pyc in __init__(self, src, **kwds)
+   1706         kwds['usecols'] = self.usecols
+   1707 
+-&gt; 1708         self._reader = parsers.TextReader(src, **kwds)
+   1709 
+   1710         passed_names = self.names is None
+
+
+pandas/_libs/parsers.pyx in pandas._libs.parsers.TextReader.__cinit__()
+
+
+pandas/_libs/parsers.pyx in pandas._libs.parsers.TextReader._setup_parser_source()
+
+
+IOError: File grapevine_pot.csv does not exist
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Local Coordinates Correction</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> traversal<span style="color:#f92672">.</span>iter_mtg2(g, g<span style="color:#f92672">.</span>root):
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>node(g<span style="color:#f92672">.</span>Trunk(v, Scale<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    theta <span style="color:#f92672">=</span> <span style="color:#ae81ff">180</span> <span style="color:#66d9ef">if</span> int(n<span style="color:#f92672">.</span>index()) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">200</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span> <span style="color:#66d9ef">if</span> int(n<span style="color:#f92672">.</span>index()) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">300</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_orientation(g, v, theta, local_rotation<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scene rotation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> traversal<span style="color:#f92672">.</span>iter_mtg2(g, g<span style="color:#f92672">.</span>root):
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_orientation(g, v, <span style="color:#ae81ff">90.</span>, local_rotation<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> traversal<span style="color:#f92672">.</span>iter_mtg2(g, g<span style="color:#f92672">.</span>root):
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_phyto_modular(g, v)
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_mtg_properties(g, v)
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_mtg_geometry(g, v)
+</span></span><span style="display:flex;"><span>    architecture<span style="color:#f92672">.</span>vine_transform(g, v)
+</span></span></code></pre></div><p>Now, we create a scene from the MTG and we display it with the PantGL() function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scene <span style="color:#f92672">=</span> display<span style="color:#f92672">.</span>visu(g, def_elmnt_color_dict<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, scene<span style="color:#f92672">=</span>Scene(), view_result<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>PlantGL(scene)
+</span></span></code></pre></div><p>With the MTG() function, we can visualize a particuliar property of the MTG through a different colormap. 
+For instance, we display the vine considering the length of every part of the shoot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>MTG(g, <span style="color:#e6db74">&#39;Length&#39;</span>)
+</span></span></code></pre></div><h2 id="simulation-of-hydraulic-structure-gas-and-energy-exchange-dynamics">Simulation of hydraulic structure, gas and energy exchange dynamics</h2>
+<p>Once we tested some basic features, we run the model and simulate hydraulic structure, gas and energy exchange dynamics of the shoot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>run(g, str(getcwd()) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span>, scene, psi_soil<span style="color:#f92672">=-</span><span style="color:#ae81ff">0.5</span>, gdd_since_budbreak<span style="color:#f92672">=</span><span style="color:#ae81ff">1000.</span>, view_result<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p>The same way we visualized the &ldquo;Length&rdquo; property, we can visualize now more specific property once the model is run.
+For instance, we display the shoot through the <strong>stomatal conductance</strong> property.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>MTG(g, <span style="color:#e6db74">&#39;gs&#39;</span>)
+</span></span></code></pre></div>
+
+                            
+                            
+                            
+                        </section>
+
+					</div>
+
+                    
+
+<footer id="footer" >
+  <div class="u-align-center">
+    <a href="https://www.gouvernement.fr" >
+      <img src="../../images/rfBIG.png" width="165" class="logos">
+    </a>
+    <a href="https://www.inrae.fr" class="">
+      <img src="../../images/inraeBIG.png" width="200" class="logos">
+    </a>
+    <a href="https://www.plant2pro.fr" class="">
+      <img src="../../images/plnt2proBIG.png" width="200" class="logos">
+    </a>
+  </div>
+    
+</footer>
+
+                    
+<div id="copyright">
+    <ul><li>&copy; The grape</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Hugo Port: <a href="https://curtiscode.dev">curtiscode</a></li></ul>
+</div>
+
+
+            </div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+<script src='../../assets/js/bundle.js'></script>
+
+
+	</body>
+</html>

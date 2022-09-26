@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+	<head>
+		<title>Introduction &middot; The grape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		
+		
+		<link rel="stylesheet" href="../../assets/css/main.min.css">
+		
+		
+		<link rel="shortcut icon" href="images/icons/4698354.png">
+		
+		
+		<noscript><link rel="stylesheet" href='../../assets/css/noscript.css' /></noscript>
+		
+	</head>
+
+	<body lang='en' class="is-preload">
+
+		
+			<div id="wrapper">
+
+                
+<header id="header">
+    <a href='../../' class="logo">The grape</a>
+</header>
+
+                
+
+
+<nav id="nav">
+    <ul class="links">
+        <li class=""><a href='../../'>The grape</a></li><li class=""><a href='../../second_page'>Second page</a></li><li class=""><a href='../../third_page'>Caribu</a></li><li class=""><a href='../../fourth_page'>Stathis</a></li><li class=""><a href='../../hundred_page'>Caribu 2</a></li>
+        <li><a href='../../#footer'>Contact</a></li>
+        
+        
+    </ul>
+    
+    <ul class="icons">
+        
+        
+        
+        
+        <li><a href="https://www.linkedin.com" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        
+        
+        <li><a href="https://github.com/openalea" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        
+        
+        
+        
+        
+    </ul>
+    
+</nav>
+
+
+				
+					<div id="main">
+
+						
+                        <section class="post">
+                            <header class="major">
+                                
+                                <h1>Introduction</h1>
+                                <p>Development</p>
+                            </header>
+                            
+                            <div class="image main"><img src="../../images/window/grape-vine-tunnel-archway-passage-garden-autumn-near-douro-river-portugal-93621530.jpg" alt="" /></div>
+                            
+                            <p>+&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Development  |
++==============+
+|              |
++&mdash;&mdash;&mdash;&mdash;&ndash;+
+| ::: contents |
+| Contents     |
+| :::          |
++&mdash;&mdash;&mdash;&mdash;&ndash;+
+| &gt; local      |
+| &gt;            |
+| &gt; :          |
++&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Contributing |
++&mdash;&mdash;&mdash;&mdash;&ndash;+</p>
+<h1 id="introduction">Introduction</h1>
+<p><a href="https://github.com/openalea">OpenAlea</a> is open-source. Everyone is
+welcome to contribute.</p>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>All the packages are separated on two <a href="https://github.com">Github</a> pages</p>
+<ul>
+<li>the official and stable packages on
+<a href="https://github.com/openalea">OpenAlea</a></li>
+<li>the unofficial, WIP and <em>to be reviewed</em> packages on
+<a href="https://github.com/openalea-incubator">OpenAlea-Incubator</a>
+:::</li>
+</ul>
+<p>There are many ways to contribute to
+<a href="https://github.com/openalea">OpenAlea</a>. The most common ways of
+contributing are coding or documenting different parts of the project.
+One may improve documentation which is as much important as improving
+the code itself. One could also create their own package, see <a href="#how-to-contribute">How to
+contribute</a>.</p>
+<p>Another way to contribute to the project is to report bugs ans issues
+you are facing.</p>
+<h1 id="how-to-contribute">How to contribute</h1>
+<p>The main way to contribute is to fork the package repository you are
+interested in on <a href="https://github.com">GitHub</a></p>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>Remember, the packages are found on different
+<a href="https://github.com">GitHub</a> pages. The following steps describe a
+tutorial for an <a href="https://github.com/openalea">OpenAlea</a> package. Make
+the good changes if you want to use
+<a href="https://github.com/openalea-incubator">OpenAlea-Incubator</a> packages.
+:::</p>
+<ol>
+<li>
+<p><a href="https://github.com/join">Create an account</a> on GitHub if you do not
+already have one. You will choose your <a href="https://github.com">GitHub</a>
+login &lt;your_login&gt;.</p>
+</li>
+<li>
+<p><a href="https://help.github.com/en/articles/fork-a-repo">Fork</a> the package
+repository of your choice (for instance, <a href="https://github.com/openalea/mtg">MTG
+repository</a>) and click on the
+'<a href="https://help.github.com/en/articles/fork-a-repo">Fork</a>' button
+near the top of the page. It generates a copy of the repository
+under your account on the <a href="https://github.com">GitHub</a> user account.
+For more details on how to fork a repository see <a href="https://help.github.com/articles/fork-a-repo/">this
+guide</a>.</p>
+</li>
+<li>
+<p><a href="https://help.github.com/en/articles/cloning-a-repository">Clone</a>
+your fork of the package repo from your <a href="https://github.com">GitHub</a>
+account to your local disk :</p>
+<pre><code>git clone https://github.com/&lt;your_login&gt;/&lt;package_name&gt;.git
+cd &lt;package_name&gt;
+</code></pre>
+</li>
+<li>
+<p>Create a branch &lt;branch_name&gt; to hold your development changes :</p>
+<pre><code>git checkout -b &lt;branch_name&gt;
+</code></pre>
+<p>and start making changes. Always use a <code>feature</code> branch. It's good
+practice to never work on the <code>master</code> branch!</p>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>In the above setup, your <code>origin</code> remote repository points to
+<code>&lt;your_login&gt;/.git</code>. If you wish to fetch/merge from the main
+repository instead of your forked one, you will need to add another
+remote to use instead of <code>origin</code>. It's good practice to choose the
+name <code>upstream</code> for it, and the command will be:</p>
+<pre><code>git remote add upstream https://github.com/openalea/&lt;package_name&gt;.git
+</code></pre>
+<p>If the package you chose come from OpenAlea-Incubator, the command
+will be:</p>
+<pre><code>git remote add upstream https://github.com/openalea_incubator/&lt;package_name&gt;.git
+</code></pre>
+<p>And in order to fetch the new remote and base your work on the
+latest changes of it you can:</p>
+<pre><code>git fetch upstream
+git checkout -b &lt;your_name&gt; upstream/master
+</code></pre>
+<p>:::</p>
+</li>
+<li>
+<p>Develop the feature on your feature branch on your computer, using
+Git to do the version control. When you're done editing, add
+changed files using <code>git add</code> and then <code>git commit</code> files:</p>
+<pre><code>git add &lt;modified_files&gt;
+git commit -m &quot;description of what you've done&quot;
+</code></pre>
+<p>to record your changes in Git, then push the changes to your
+<a href="https://github.com">GitHub</a> account with:</p>
+<pre><code>git push -u origin &lt;branch_name&gt;
+</code></pre>
+</li>
+<li>
+<p>Once you've finished, you can create a <strong>pull request</strong> on the
+corresponding <a href="https://github.com">GitHub</a>. Follow
+<a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork">these</a>
+instructions to create a pull request from your fork.</p>
+</li>
+</ol>
+<h1 id="how-to-make-a-proper-bug-report">How to make a proper bug report</h1>
+<h1 id="documentation">Documentation</h1>
+<p>You can also contribute to the documentation. If you find some parts
+that are not explained enough or uncleared, you can complete or improve
+the documentation.</p>
+<p>Once you have forked the package on your device, you have to install
+<a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> to generate the HTML
+output :</p>
+<pre><code>pip install sphinx
+</code></pre>
+<p>In each package repository, it must be a <code>docs/</code> directory in which the
+reStructuredText documents are. You can modify or create these and
+generate the HTML output in the <code>docs/</code> directory :</p>
+<pre><code>make html 
+</code></pre>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>If you are creating your own package, you can build the
+<a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> environment directly in
+the <code>docs/</code> directory :</p>
+<pre><code>sphinx-quickstart
+</code></pre>
+<p>:::</p>
+<p>Once you are finished, you can add, commit and push what you have done
+on <a href="https://github.com">GitHub</a> and then create a <strong>pull request</strong> (see
+<a href="#how-to-contribute">How to contribute</a>).</p>
+<p>As we want all the documentation to look the same way, configure your
+Sphinx like us:</p>
+<ol>
+<li>
+<p>The theme we are using is the <a href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">Read the Docs Sphinx
+Theme</a>. The
+theme can be installed like this :</p>
+<pre><code>pip install sphinx_rtd_theme
+</code></pre>
+<p>Once you've installed the theme, write in your <code>conf.py</code> file :</p>
+<pre><code>html_theme = &quot;sphinx_rtd_theme&quot;
+</code></pre>
+<p>Then write in the same file :</p>
+<pre><code>html_theme_options = {
+ 'logo_only': True
+}
+</code></pre>
+</li>
+<li>
+<p>Download the OpenAlea logo and put it your <code>_static</code> directory and
+then write in your <code>conf.py</code> file :</p>
+<pre><code>html_static_path = ['_static']
+html_logo = &quot;_static/openalea_web.svg&quot;
+</code></pre>
+</li>
+<li>
+<p>Mention the main website &quot;openalea.rtfd.io&quot;</p>
+</li>
+</ol>
+<h2 id="moving-from-python-2-to-python-3">Moving from Python 2 to Python 3</h2>
+
+
+                            
+                            
+                            
+                        </section>
+
+					</div>
+
+                    
+
+<footer id="footer" >
+  <div class="u-align-center">
+    <a href="https://www.gouvernement.fr" >
+      <img src="../../images/rfBIG.png" width="165" class="logos">
+    </a>
+    <a href="https://www.inrae.fr" class="">
+      <img src="../../images/inraeBIG.png" width="200" class="logos">
+    </a>
+    <a href="https://www.plant2pro.fr" class="">
+      <img src="../../images/plnt2proBIG.png" width="200" class="logos">
+    </a>
+  </div>
+    
+</footer>
+
+                    
+<div id="copyright">
+    <ul><li>&copy; The grape</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Hugo Port: <a href="https://curtiscode.dev">curtiscode</a></li></ul>
+</div>
+
+
+            </div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+<script src='../../assets/js/bundle.js'></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+	<head>
+		<title>Caribu Tutorial 3 &middot; The grape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		
+		
+		<link rel="stylesheet" href="../assets/css/main.min.css">
+		
+		
+		<link rel="shortcut icon" href="images/icons/4698354.png">
+		
+		
+		<noscript><link rel="stylesheet" href='../assets/css/noscript.css' /></noscript>
+		
+	</head>
+
+	<body lang='en' class="is-preload">
+
+		
+			<div id="wrapper">
+
+                
+<header id="header">
+    <a href='../' class="logo">The grape</a>
+</header>
+
+                
+
+
+<nav id="nav">
+    <ul class="links">
+        <li class=""><a href='../'>The grape</a></li><li class=""><a href='../second_page'>Second page</a></li><li class="active"><a href='../third_page'>Caribu</a></li><li class=""><a href='../fourth_page'>Stathis</a></li><li class=""><a href='../hundred_page'>Caribu 2</a></li>
+        <li><a href='../#footer'>Contact</a></li>
+        
+        
+    </ul>
+    
+    <ul class="icons">
+        
+        
+        
+        
+        <li><a href="https://www.linkedin.com" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        
+        
+        <li><a href="https://github.com/openalea" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        
+        
+        
+        
+        
+    </ul>
+    
+</nav>
+
+
+				
+					<div id="main">
+
+						
+                        <section class="post">
+                            <header class="major">
+                                
+                                <h1>Caribu Tutorial 3</h1>
+                                <p>CaribuScene 2</p>
+                            </header>
+                            
+                            <div class="image main"><img src="../images/window/images.jpg" alt="" /></div>
+                            
+                            <h1 id="caribu-tutorial">Caribu Tutorial</h1>
+<p><a href="../test.html">test</a></p>
+<html> 
+  <body>
+  <iframe width=1000 height=900 src="../test.html" seamless></iframe>
+  </body>
+</html>
+<p>sdqdjknsqld</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openalea.plantgl.all <span style="color:#66d9ef">as</span> pgl
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> alinea.caribu.CaribuScene <span style="color:#f92672">import</span> CaribuScene
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> alinea.caribu.data_samples <span style="color:#f92672">import</span> data_path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>can <span style="color:#f92672">=</span> str(data_path(<span style="color:#e6db74">&#39;f331s1_100plantes.can&#39;</span>))
+</span></span><span style="display:flex;"><span>sky <span style="color:#f92672">=</span> str(data_path(<span style="color:#e6db74">&#39;Turtle16soc.light&#39;</span>))
+</span></span><span style="display:flex;"><span>opts <span style="color:#f92672">=</span> map(str, [data_path(<span style="color:#e6db74">&#39;par.opt&#39;</span>), data_path(<span style="color:#e6db74">&#39;nir.opt&#39;</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#pattern = str(data_path(&#39;filter.8&#39;))</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># complete set of files</span>
+</span></span><span style="display:flex;"><span>cs <span style="color:#f92672">=</span> CaribuScene(scene<span style="color:#f92672">=</span>can, light<span style="color:#f92672">=</span>sky, opt<span style="color:#f92672">=</span>opts, ) <span style="color:#75715e">#pattern=pattern)</span>
+</span></span><span style="display:flex;"><span>raw,agg<span style="color:#f92672">=</span>cs<span style="color:#f92672">.</span>run(simplify<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><pre><code>NOT using graph editor observer No module named grapheditor
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scene,values <span style="color:#f92672">=</span> cs<span style="color:#f92672">.</span>plot(raw[<span style="color:#e6db74">&#39;par&#39;</span>][<span style="color:#e6db74">&#39;Ei&#39;</span>],display<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>v99 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(values, <span style="color:#ae81ff">99</span>)
+</span></span><span style="display:flex;"><span>nvalues<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>array(values)
+</span></span><span style="display:flex;"><span>nvalues[nvalues<span style="color:#f92672">&gt;</span>v99]<span style="color:#f92672">=</span>v99
+</span></span><span style="display:flex;"><span>values <span style="color:#f92672">=</span> nvalues<span style="color:#f92672">.</span>tolist()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> oawidgets.plantgl <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>PlantGL(scene, group_by_color<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, property<span style="color:#f92672">=</span>values)
+</span></span></code></pre></div><pre><code>UGxvdChhbnRpYWxpYXM9MywgYXhlcz1bJ3gnLCAneScsICd6J10sIGJhY2tncm91bmRfY29sb3I9MTY3NzcyMTUsIGNhbWVyYT1bNC41LCA0LjUsIDQuNSwgMC4wLCAwLjAsIDAuMCwgMS4wLCDigKY=
+</code></pre>
+
+
+                            
+                            
+                            
+                        </section>
+
+					</div>
+
+                    
+
+<footer id="footer" >
+  <div class="u-align-center">
+    <a href="https://www.gouvernement.fr" >
+      <img src="../images/rfBIG.png" width="165" class="logos">
+    </a>
+    <a href="https://www.inrae.fr" class="">
+      <img src="../images/inraeBIG.png" width="200" class="logos">
+    </a>
+    <a href="https://www.plant2pro.fr" class="">
+      <img src="../images/plnt2proBIG.png" width="200" class="logos">
+    </a>
+  </div>
+    
+</footer>
+
+                    
+<div id="copyright">
+    <ul><li>&copy; The grape</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Hugo Port: <a href="https://curtiscode.dev">curtiscode</a></li></ul>
+</div>
+
+
+            </div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+<script src='../assets/js/bundle.js'></script>
+
+
+	</body>
+</html>

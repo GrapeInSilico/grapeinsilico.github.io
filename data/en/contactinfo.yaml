@@ -1,0 +1,9 @@
+contactformaction: 'post-action'
+
+address:
+- line: 'SupAgro'
+- line: 'LEPSE'
+
+phone: 'phone number'
+
+email: 'someone@untitled.tld'
