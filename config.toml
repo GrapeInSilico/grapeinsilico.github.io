@@ -1,0 +1,26 @@
+relativeURLs = true
+languageCode = "en-us"
+title = "The grape"
+baseURL = "https://argent3.github.io"
+theme = "hugo-theme-massively"
+#googleanalytics = ""
+#disqusShortname = ""
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+
+ [params]
+  # set below parameter to define a favicon
+   favicon = "images/icons/4698354.png"
+  # set to change date format
+   dateFormat = "2.1.2006"
+   backgroundPath = "images/background/background.jpg"
+
+# Below parameters can be set to override default post settings
+ [params.posts]
+     folderName = "post"
+     pageSize = "6"
+     featuredPost = true
+     paginationPages = 2
+     showFirstLast = false
+ 
+[markup.goldmark.renderer]
+  unsafe = true

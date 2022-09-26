@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The grape</title>
+    <link>https://argent3.github.io/</link>
+    <description>Recent content on The grape</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://argent3.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Application Domains</title>
+      <link>https://argent3.github.io/post/post11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post11/</guid>
+      <description>Application Domains This is a thing to do with the thing that is.</description>
+    </item>
+    
+    <item>
+      <title>Caribu Tutorial</title>
+      <link>https://argent3.github.io/hundred_page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/hundred_page/</guid>
+      <description>Caribu Tutorial Agagin test
+sdqdjknsqld
+import openalea.plantgl.all as pgl from alinea.caribu.CaribuScene import CaribuScene from alinea.caribu.data_samples import data_path can = str(data_path(&amp;#39;f331s1_100plantes.can&amp;#39;)) sky = str(data_path(&amp;#39;Turtle16soc.light&amp;#39;)) opts = map(str, [data_path(&amp;#39;par.opt&amp;#39;), data_path(&amp;#39;nir.opt&amp;#39;)]) #pattern = str(data_path(&amp;#39;filter.8&amp;#39;)) # complete set of files cs = CaribuScene(scene=can, light=sky, opt=opts, ) #pattern=pattern) raw,agg=cs.run(simplify=True) NOT using graph editor observer No module named grapheditorscene,values = cs.plot(raw[&amp;#39;par&amp;#39;][&amp;#39;Ei&amp;#39;],display=False) import numpy as np v99 = np.percentile(values, 99) nvalues=np.array(values) nvalues[nvalues&amp;gt;v99]=v99 values = nvalues.tolist() from oawidgets.</description>
+    </item>
+    
+    <item>
+      <title>Caribu Tutorial 3</title>
+      <link>https://argent3.github.io/third_page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/third_page/</guid>
+      <description>Caribu Tutorial test
+sdqdjknsqld
+import openalea.plantgl.all as pgl from alinea.caribu.CaribuScene import CaribuScene from alinea.caribu.data_samples import data_path can = str(data_path(&amp;#39;f331s1_100plantes.can&amp;#39;)) sky = str(data_path(&amp;#39;Turtle16soc.light&amp;#39;)) opts = map(str, [data_path(&amp;#39;par.opt&amp;#39;), data_path(&amp;#39;nir.opt&amp;#39;)]) #pattern = str(data_path(&amp;#39;filter.8&amp;#39;)) # complete set of files cs = CaribuScene(scene=can, light=sky, opt=opts, ) #pattern=pattern) raw,agg=cs.run(simplify=True) NOT using graph editor observer No module named grapheditorscene,values = cs.plot(raw[&amp;#39;par&amp;#39;][&amp;#39;Ei&amp;#39;],display=False) import numpy as np v99 = np.percentile(values, 99) nvalues=np.array(values) nvalues[nvalues&amp;gt;v99]=v99 values = nvalues.tolist() from oawidgets.plantgl import * PlantGL(scene, group_by_color=False, property=values) UGxvdChhbnRpYWxpYXM9MywgYXhlcz1bJ3gnLCAneScsICd6J10sIGJhY2tncm91bmRfY29sb3I9MTY3NzcyMTUsIGNhbWVyYT1bNC41LCA0LjUsIDQuNSwgMC4wLCAwLjAsIDAuMCwgMS4wLCDigKY=</description>
+    </item>
+    
+    <item>
+      <title>Gallery</title>
+      <link>https://argent3.github.io/fourth_page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/fourth_page/</guid>
+      <description>Gallery {width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;100.0%&amp;rdquo;}</description>
+    </item>
+    
+    <item>
+      <title>Help</title>
+      <link>https://argent3.github.io/second_page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/second_page/</guid>
+      <description>Help Need help ? Want to contact someone ? Contact prenon.nom@machin.fr.</description>
+    </item>
+    
+    <item>
+      <title>HydroShoot Tutorial - Grapevine</title>
+      <link>https://argent3.github.io/post/post24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post24/</guid>
+      <description>HydroShoot Tutorial - Grapevine Authors : R.Albasha, C.Fournier, C.Pradal, M.Chelle, J.A Prieto, G.Louarn, T.Simonneau, E.Lebon Publication : https://doi.org/10.1093/insilicoplants/diz007 HydroShoot is a functional-structural plant model that simulates the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, at the organ level.
+In this tutorial, we will :
+reconstruct in 3D the shoot architecture of a vine from plant digitalization data simulate hydraulic structure, gas and energy exchange dynamics 3D reconstruction of vine architecture Let&amp;rsquo;s import all the packages we need for this tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Indices and tables</title>
+      <link>https://argent3.github.io/post/post3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post3/</guid>
+      <description>{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+{width=&amp;ldquo;30.0%&amp;rdquo;}
+Indices and tables genindex{.interpreted-text role=&amp;ldquo;ref&amp;rdquo;} modindex{.interpreted-text role=&amp;ldquo;ref&amp;rdquo;} search{.interpreted-text role=&amp;ldquo;ref&amp;rdquo;} </description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://argent3.github.io/post/post4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post4/</guid>
+      <description>Installation Conda Installation Conda is a package manager that can be installed on Linux, Windows, and Mac. If you have not yet installed conda on your computer, follow these instructions : Conda Installation.
+OpenAlea Installation The recommended way to install OpenAlea is to create a new conda environment.
+First, create an environment named openalea:
+Launch a console or a terminal (See Anaconda Prompt in Start menu on windows). In this console, to install a given openalea package &amp;lt;package_name&amp;gt; with its dependencies, execute this:</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://argent3.github.io/post/post8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post8/</guid>
+      <description>+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | Development | +==============+ | | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | ::: contents | | Contents | | ::: | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | &amp;gt; local | | &amp;gt; | | &amp;gt; : | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | Contributing | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+
+Introduction OpenAlea is open-source. Everyone is welcome to contribute.
+::: note ::: title Note :::
+All the packages are separated on two Github pages
+the official and stable packages on OpenAlea the unofficial, WIP and to be reviewed packages on OpenAlea-Incubator ::: There are many ways to contribute to OpenAlea.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://argent3.github.io/post/post5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post5/</guid>
+      <description>License The OpenAlea core is released under the Cecill-C license. The OpenAlea GUI, Visualea, is released under the Cecill-v2 license. ::: note ::: title Note :::
+Each external package can have its own license, please check it before using a package. :::
+You can refer to the document Package License Guidelines for futher explanations.
+Please, cite the project if you use OpenAlea in your publications.</description>
+    </item>
+    
+    <item>
+      <title>Packages</title>
+      <link>https://argent3.github.io/post/post9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post9/</guid>
+      <description>Packages |
+Modelling with OpenAlea MTG Multiscale Tree Graph datastructure and interfaces
+{.align-left width=&amp;ldquo;200px&amp;rdquo;}
+MTG package aims to define :
+A share data structure for plant architecture representation. Read and write MTG files. Export to various graph format. Several algorithms for MTG. Authors : Christophe Pradal, Christophe Godin
+Institutes : Cirad, Inria
+Source Code : Github
+L-Py Plant simulation using Lindenmayer Systems with Python
+{.align-left width=&amp;ldquo;200px&amp;rdquo;}
+L-systems were conceived as a mathematical framework for modeling growth of plants.</description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://argent3.github.io/post/post12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post12/</guid>
+      <description>Tutorials Here are some interactive tutorials that can help you in your projects.
+::: {.toctree maxdepth=&amp;ldquo;2&amp;rdquo;} visualea/beginner.rst visualea/weberpenn.rst :::</description>
+    </item>
+    
+    <item>
+      <title>Using Visualea : Beginning</title>
+      <link>https://argent3.github.io/post/post14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://argent3.github.io/post/post14/</guid>
+      <description>Using Visualea : Beginning Here is a tutorial in which you will see how to implement a simple modeling problem in Visualea
+Here is what you need for the following tutorial :: conda create -n visualea_tuto -c openalea openalea.visualea openalea.components openalea.plantgl boost=1.66 -c openalea/label/unstable conda activate visualea_tuto
+Once you installed and activated the OpenAlea environment (see Installation), execute this :
+visualeaThe Goal We measured some tree data and saved these in a tabbed editor (like Excel).</description>
+    </item>
+    
+  </channel>
+</rss>

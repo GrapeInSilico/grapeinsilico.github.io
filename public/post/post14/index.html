@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+	<head>
+		<title>Using Visualea : Beginning &middot; The grape</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		
+		
+		<link rel="stylesheet" href="../../assets/css/main.min.css">
+		
+		
+		<link rel="shortcut icon" href="images/icons/4698354.png">
+		
+		
+		<noscript><link rel="stylesheet" href='../../assets/css/noscript.css' /></noscript>
+		
+	</head>
+
+	<body lang='en' class="is-preload">
+
+		
+			<div id="wrapper">
+
+                
+<header id="header">
+    <a href='../../' class="logo">The grape</a>
+</header>
+
+                
+
+
+<nav id="nav">
+    <ul class="links">
+        <li class=""><a href='../../'>The grape</a></li><li class=""><a href='../../second_page'>Second page</a></li><li class=""><a href='../../third_page'>Caribu</a></li><li class=""><a href='../../fourth_page'>Stathis</a></li><li class=""><a href='../../hundred_page'>Caribu 2</a></li>
+        <li><a href='../../#footer'>Contact</a></li>
+        
+        
+    </ul>
+    
+    <ul class="icons">
+        
+        
+        
+        
+        <li><a href="https://www.linkedin.com" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        
+        
+        <li><a href="https://github.com/openalea" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        
+        
+        
+        
+        
+    </ul>
+    
+</nav>
+
+
+				
+					<div id="main">
+
+						
+                        <section class="post">
+                            <header class="major">
+                                
+                                <h1>Using Visualea : Beginning</h1>
+                                <p>Here is a tutorial in which you will see how to implement a simplemodeling problem in *Visualea*![image](/images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/intro.gif)</p>
+                            </header>
+                            
+                            <div class="image main"><img src="../../images/window/grape-vine-trellis.jpg" alt="" /></div>
+                            
+                            <h1 id="using-visualea--beginning">Using Visualea : Beginning</h1>
+<p>Here is a tutorial in which you will see how to implement a simple
+modeling problem in <em>Visualea</em></p>
+<p><img src="../../images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/intro.gif" alt="image"></p>
+<p>Here is what you need for the following tutorial :: conda create -n
+visualea_tuto -c openalea openalea.visualea openalea.components
+openalea.plantgl boost=1.66 -c openalea/label/unstable conda activate
+visualea_tuto</p>
+<p>Once you installed and activated the OpenAlea environment (see
+<a href="https://openaleadocs.readthedocs.io/en/latest/install.html">Installation</a>),
+execute this :</p>
+<pre><code>visualea
+</code></pre>
+<h2 id="the-goal">The Goal</h2>
+<p>We measured some tree data and saved these in a tabbed editor (like
+Excel). The data has been exported in a CSV file. We want to have a
+simple 3D representation of the measured tree.</p>
+<p>Here is the data :</p>
+<hr>
+<p>X           Y           crown_up        crown_bot       trunk_diameter</p>
+<hr>
+<p>0           0           10              20              2</p>
+<p>10          12          12              18              3</p>
+<p>20          22          8               23              3.4</p>
+<h2 id="0-----------18----------14--------------22--------------25">0           18          14              22              2.5</h2>
+<p>You may want to download the <a href="http://openalea.gforge.inria.fr/dokuwiki/lib/exe/fetch.php?media=documentation:tutorials:stand.csv">CSV
+file</a>.</p>
+<h2 id="step-1--create-your-own-package">Step 1 : Create Your Own Package</h2>
+<p>First of all, we need to create a package where to put your work
+(dataflow, node definition, data, &hellip;). A package is in fact a simple
+directory containing python files.</p>
+<h3 id="create-a-package">Create a package</h3>
+<ol>
+<li>Select <strong>Package Manager</strong> -&gt; <strong>Add</strong> -&gt; <strong>Package</strong></li>
+<li>Fill the form :
+<ul>
+<li><strong>Name</strong> : standbuilder</li>
+<li><strong>Description</strong> : build stand representation from measured data</li>
+<li><strong>Version</strong> : 0.1</li>
+<li><strong>License</strong> : Cecill-C</li>
+<li><strong>Authors</strong> : All collaborators and package writer</li>
+<li><strong>Institutes</strong> : &hellip;</li>
+<li><strong>URL</strong> : &hellip;</li>
+<li><strong>Path</strong> : /home/myhome/openalea_pkg (could be anywhere you
+want)</li>
+</ul>
+</li>
+<li>Click &quot;OK&quot;</li>
+</ol>
+<p><img src="../../images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/step1.gif" alt="image"></p>
+<p>Your new package should appear in the package manager.</p>
+<p>::: tip
+::: title
+Tip
+:::</p>
+<p>The path corresponds to the directory where the python file will be
+written. Choose it carefully in order to be able to find it later.
+:::</p>
+<h2 id="step-2--read-csv-data">Step 2 : Read CSV Data</h2>
+<h3 id="create-a-dataflow-to-read-and-view-a-file">Create a dataflow to read and view a file</h3>
+<p>::: tip
+::: title
+Tip
+:::</p>
+<p>Leaving the cursor on any item in the Package Manager, or on nodes or
+ports in the dataflow view brings up a tooltip. Clicking on them also
+shows some documentation in the &quot;Help&quot; tab (bottom-left-hand corner).
+:::</p>
+<ol>
+<li>
+<p>In the Package Manager tab (left column), open the <em>openalea.file</em>
+folder. You should see a list of nodes.</p>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>You can search for a particuliar node in the Search tab.
+:::</p>
+</li>
+<li>
+<p>In the Package Manager tab, drag the <code>read</code> node from the
+<em>openalea.file</em> package to the workshop. It should now appear on the
+canvas.</p>
+</li>
+<li>
+<p>In the workspace, right click on the <code>read</code> node and choose &quot;Open
+Widget&quot;. Then browse for the &quot;stand.csv&quot; file (no need to
+validate anything, changes are automatically taken into account so
+you can simply close the window).</p>
+</li>
+<li>
+<p>Drag the <code>text</code> node from the <em>openalea.data structure.string</em>
+folder onto the workspace.</p>
+</li>
+<li>
+<p>Connect the output of the <code>read</code> node to the input of the <code>text</code>
+node.</p>
+</li>
+</ol>
+<p><img src="../../images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/step2.1.gif" alt="image"></p>
+<h3 id="view-the-file-contents">View the file contents</h3>
+<ol>
+<li>Right click on the <code>text</code> node and select &quot;Run&quot;</li>
+<li>Right click on the <code>text</code> node and select &quot;Open Widget&quot;</li>
+</ol>
+<h3 id="build-a-csv-object">Build a CSV object</h3>
+<p>In order to manipulate the CSV data, we are going to build a CSV object.</p>
+<ol>
+<li>Select the search tab in the package manager</li>
+<li>Type CSV</li>
+<li>Drag the <code>read csv</code> node on the workspace</li>
+<li>Do the same to create a <code>getitem</code> node
+(<code>openalea.python method.getitem</code>)</li>
+<li>Connect <code>read</code>'s output to <code>read csv</code>'s input</li>
+<li>Connect <code>read csv</code>'s first output to <code>getitem</code>'s first input</li>
+<li>Add an <code>int</code> node on the workspace, and connect its output to the
+second input of <code>getitem</code></li>
+<li>Execute the graph by selecting &quot;Run&quot; in the context menu of the
+<code>getitem</code> node</li>
+<li>Print the output in the shell : Right click on the output port, and
+select &quot;Print&quot;</li>
+</ol>
+<p><img src="../../images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/step2.2.gif" alt="image"></p>
+<h3 id="save-your-work">Save your work</h3>
+<ol>
+<li>Select <strong>File</strong> -&gt; <strong>Save as composite node</strong> (CTRL + S)</li>
+<li>In the selector dialog, click &quot;New&quot; Button</li>
+<li>In the new dialog
+<ul>
+<li>Select the standbuilder package in the combo box</li>
+<li>Enter the name : <em>readcsv_1</em></li>
+<li>Add a description : <em>Read data file</em></li>
+<li>Click &quot;Ok&quot;</li>
+</ul>
+</li>
+<li>In the selector, click &quot;Ok&quot; button</li>
+<li>The new graph should appear in the standbuilder package.</li>
+</ol>
+<p><img src="../../images/openalea.rtfd.io/doc/tutorials/visualea/images/beginner/step2.3.gif" alt="image"></p>
+<h2 id="step-3--create-a-simple-3d-representation-of-one-tree">Step 3 : Create a simple 3D representation of one tree</h2>
+<p>Before displaying the whole stand, we must rebuild a tree. In this
+tutorial we build a very simple tree representation composed by a sphere
+for the crown and a cylinder for the trunk.</p>
+<h3 id="create-a-3d-object">Create a 3D object</h3>
+<p>This simple dataflow shows how to display a scene object.</p>
+<ol>
+<li>First step, we create a new workspace : Select <strong>File</strong> -&gt; <strong>New
+Empty Workspace</strong> (CTRL+T)</li>
+<li>Create the following dataflow by using PlantGL nodes
+<ul>
+<li><code>vplants.plantgl.objects.cylinder</code> creates a cylinder</li>
+<li><code>vplants.plantgl.objects.translated</code> moves the input object</li>
+<li><code>openalea.data structure.tuple.tuple3</code> to set the translation
+vector</li>
+<li><code>vplants.plantgl.visualization.plot3d</code> to view the result</li>
+<li><code>openalea.data structure.float</code> to set the parameters of the
+tuple3 node</li>
+</ul>
+</li>
+</ol>
+<p><img src="./images/beginner/step3.1.PNG" alt="image"></p>
+<h3 id="create-a-simple-tree">Create a simple tree</h3>
+<p>To build our tree, we must construct a PlantGL scene containing a
+cylinder and a sphere.</p>
+<ol>
+<li>Modify the previous dataflow as follow:
+<ul>
+<li>Add a <code>vplants.plantgl.objects.sphere</code> object</li>
+<li>Add a <code>vplants.plantgl.objects.translated</code> object</li>
+<li>Add a <code>vplants.plantgl.objects.scene</code> object</li>
+<li>Connect the 2 translated objects to a
+<code>vplants.plantgl.objects.scene</code> object</li>
+</ul>
+</li>
+<li>Save this dataflow in your standbuilder package as <strong>simple_tree</strong></li>
+</ol>
+<p><img src="./images/beginner/step3.2.PNG" alt="image"></p>
+<h2 id="step-4--create-a-macro-node--group-nodes">Step 4 : Create a Macro Node / Group Nodes</h2>
+<p>We will need to use the previous dataflow to build trees. To simplify
+this procedure, we would like to use a simple node and not a complex
+dataflow. For that we are going to embed the previous dataflow in a
+<em>composite node</em> (also named <em>macro node</em>).</p>
+<h3 id="transform-simple_tree-to-a-reusable-composite-node">Transform simple_tree to a reusable composite node</h3>
+<ol>
+<li>
+<p>Select <strong>simple_tree</strong> in the package manager</p>
+</li>
+<li>
+<p>Right click on the <strong>simple_tree</strong> graph, select &quot;Properties&quot; and
+click on the &quot;Inputs / Outputs&quot; button</p>
+</li>
+<li>
+<p>Add 5 inputs with the + button :</p>
+<ul>
+<li>X - IInt - 0 - X position</li>
+<li>Y - IInt - 0 - Y position</li>
+<li>crown_up - IFloat - 16.0 - Top of the crown</li>
+<li>crown_bot - IFloat - 8.0 - Bottom of the crown</li>
+<li>trunk_dia - IFloat - 3.0 - Trunk diameter</li>
+</ul>
+</li>
+<li>
+<p>Add 1 output with the + button</p>
+<ul>
+<li>scene - None - PlanGL scene</li>
+</ul>
+<p><img src="./images/beginner/step4.1.PNG" alt="image">{width=&ldquo;40.0%&rdquo;}</p>
+</li>
+<li>
+<p>Click &quot;OK&quot; and the buttons will appear in the workshop</p>
+</li>
+<li>
+<p>Modify the graph as follow</p>
+<ul>
+<li>Connect input 0 and 1 to the X and Y nodes</li>
+<li>Connect input 2 and 3 to a minus node <code>openalea.math.-</code>, and
+connect the result to the crown radius</li>
+<li>Connect input 5 to the trunk radius</li>
+<li>Connect input 3 to the crown bottom</li>
+</ul>
+</li>
+<li>
+<p>Save your work as a new composite node in standbuilder named
+<strong>tree_scene</strong></p>
+</li>
+</ol>
+<p><img src="./images/beginner/step4.2.PNG" alt="image">{width=&ldquo;70.0%&rdquo;}</p>
+<h3 id="using-the-new-composite-node-in-a-dataflow">Using the new composite node in a dataflow</h3>
+<ol>
+<li>Open our first dataflow <strong>readcsv_1</strong> in the standbuilder package
+(doubleclick)</li>
+<li>Drag the node <code>standbuilder.tree_scene</code> on the new workspace</li>
+<li>Add 5x <code>getitem</code> and 5x <code>string</code> object</li>
+<li>Connect the nodes as the picture in order to retrieve to different
+object properties</li>
+<li>Add a <code>plangl.visualization.plot3D</code> object and connect it to the
+output of <code>tree_scene</code></li>
+<li>Run the dataflow several times and change the value of the first
+<code>getitem</code> (object index)</li>
+<li>Save the dataflow in the standbuilder package as <strong>readcsv_2</strong></li>
+</ol>
+<h3 id="create-a-composite-node-by-grouping-nodes">Create a composite node by grouping nodes</h3>
+<ol>
+<li>Select the 5 <code>getitem</code> and their associated <code>string</code> object</li>
+<li>Click on Menu <strong>Workspace</strong> -&gt; <strong>group</strong> (CTRL+G)</li>
+<li>Run the dataflow</li>
+<li>Save it in the standbuilder package as <strong>readcsv_3</strong></li>
+</ol>
+<p><img src="./images/beginner/step4.3.PNG" alt="image">{width=&ldquo;70.0%&rdquo;}</p>
+<p><img src="./images/beginner/step4.4.PNG" alt="image">{width=&ldquo;20.0%&rdquo;}</p>
+<h2 id="step-5--get-the-spatial-distribution-of-the-trees">Step 5 : Get the spatial distribution of the trees</h2>
+<p>We want to extract from the csv object the X and Y properties and plot
+them in 2D.</p>
+<h3 id="extract-data">Extract data</h3>
+<ol>
+<li>Create a new workspace (CTRL+T)</li>
+<li>Add a <code>read</code> node and a <code>read csv</code> node to read a csv file</li>
+<li>Set the file to read by opening the <code>read</code> widget (<em>Open Widget</em>)</li>
+<li>Run and display the output (output port context menu -&gt; <em>Print</em> or
+<em>Tooltip</em>) : it's a list of obj</li>
+<li>Add a <code>getitem</code> node and an <code>int</code> node to select an object in the
+list</li>
+<li>Add an <code>extract</code> node and 2 <code>string</code> nodes to select properties in a
+particular object</li>
+<li>Set the 2 <code>string</code> objects to X and Y</li>
+<li>Run and display the output (output port context menu -&gt; <em>print</em> or
+<em>tooltip</em>) : it's a list containing the X and the Y properties of
+the selected object.</li>
+</ol>
+<p><img src="./images/beginner/step5.1.PNG" alt="image"></p>
+<h3 id="implement-iterative-process">Implement iterative process</h3>
+<p>We want to do the same thing, but for all the CSV objects contained in
+the file.</p>
+<ol>
+<li>Remove the <code>getitem</code> and the <code>int</code> nodes (with suppr)</li>
+<li>Add an <code>openalea.function operator.map</code></li>
+<li>Connect the output of <code>extract</code> to the first input of <code>map</code></li>
+<li>Connect the output of <code>read csv</code> to the second input of <code>map</code></li>
+<li>Add an <code>openalea.flow control.X</code> node and connect its output the
+first input of <code>extract</code></li>
+<li>Run the <code>map</code> object and display the result</li>
+</ol>
+<p><img src="./images/beginner/step5.2.PNG" alt="image"></p>
+<p>::: note
+::: title
+Note
+:::</p>
+<p>The X object represents a function variable. The map apply a function to
+each element received in its second input.
+:::</p>
+<h3 id="plot-2d">Plot 2D</h3>
+<ol>
+<li>Add the nodes <code>openalea.plottools.VS Plot</code> and
+<code>openalea.plottools.tuples2seq</code> on the workspace</li>
+<li>Connect the <code>map</code> output the input of <code>tuples2seq</code> and the last
+output the <code>VS Plot</code> node.</li>
+<li>Run the dataflow</li>
+<li>Save it in the standbuilder package as <strong>plot_csv</strong></li>
+</ol>
+<h2 id="step-6--apply-the-process-to-multiple-trees">Step 6 : Apply the process to multiple trees</h2>
+<p>In this step, we used the same method to build the entire stand</p>
+<ol>
+<li>Open the <code>readcsv_3</code> dataflow</li>
+<li>Modify it in order to plot in 3D all the tree contained in the file
+and not only one</li>
+<li>Use a <code>openalea.flow control.X</code> node and a <code>openalea.functional.map</code>
+node</li>
+<li>Save this work in your standbuilder package as <strong>plot_stand</strong></li>
+</ol>
+<p><img src="./images/beginner/step6.1.PNG" alt="image">{width=&ldquo;45.0%&rdquo;}</p>
+<p><img src="./images/beginner/step6.2.PNG" alt="image">{width=&ldquo;45.0%&rdquo;}</p>
+
+
+                            
+                            
+                            
+                        </section>
+
+					</div>
+
+                    
+
+<footer id="footer" >
+  <div class="u-align-center">
+    <a href="https://www.gouvernement.fr" >
+      <img src="../../images/rfBIG.png" width="165" class="logos">
+    </a>
+    <a href="https://www.inrae.fr" class="">
+      <img src="../../images/inraeBIG.png" width="200" class="logos">
+    </a>
+    <a href="https://www.plant2pro.fr" class="">
+      <img src="../../images/plnt2proBIG.png" width="200" class="logos">
+    </a>
+  </div>
+    
+</footer>
+
+                    
+<div id="copyright">
+    <ul><li>&copy; The grape</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Hugo Port: <a href="https://curtiscode.dev">curtiscode</a></li></ul>
+</div>
+
+
+            </div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+<script src='../../assets/js/bundle.js'></script>
+
+
+	</body>
+</html>
