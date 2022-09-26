@@ -4,8 +4,8 @@
 
 [submodule "openalea.rtfd.io"]
 	path = public/other/openalea.rtfd.io
-	url = https://openalea.rtfd.io
+	url = https://github.com/openalea/openalea.rtfd.io
 
 [submodule "openalea.rtfd.io static"]
 	path = static/other/openalea.rtfd.io
-	url = https://openalea.rtfd.io
+	url = https://github.com/openalea/openalea.rtfd.io
