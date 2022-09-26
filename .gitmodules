@@ -1,3 +1,7 @@
 [submodule "themes/hugo-theme-massively"]
 	path = themes/hugo-theme-massively
 	url = https://github.com/curtiscde/hugo-theme-massively
+
+[submodule "openalea.rtfd.io"]
+	path = public/other/openalea.rtfd.io
+	url = https://openalea.rtfd.io
