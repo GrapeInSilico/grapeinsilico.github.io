@@ -4,6 +4,7 @@ slug = 'post24'
 description = '[HydroShoot](https://hydroshoot.readthedocs.io) is a functional-structural plant model that simulates the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, at the organ level.In this **tutorial**, we will :* reconstruct in 3D the shoot architecture of a vine from plant digitalization data'
 disableComments = true
 image = '/images/window/photo-1572360678077-0ab5ce1be418.jpg'
+numero = 1
 +++
 
 # HydroShoot Tutorial - Grapevine

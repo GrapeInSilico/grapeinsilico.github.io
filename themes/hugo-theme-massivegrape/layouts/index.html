@@ -25,7 +25,8 @@
 		{{- end -}}
 		{{- $postsForPaging := .Scratch.Get "postsForPaging" -}}
 
-		{{- $postsPaging := .Paginate $postsForPaging $postsPageSize -}}
+		{{- $variable := $postsForPaging.ByParam "numero" -}}
+		{{- $postsPaging := .Paginate $variable $postsPageSize -}}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPostEnabled }}">

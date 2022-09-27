@@ -4,6 +4,7 @@ slug = 'post3'
 disableComments = true
 description = 'Indices and tables'
 image = '/images/window/shutterstock_692718580.jpg'
+numero = 12
 +++
 
 ![image](/images/openalea.rtfd.io/doc/packages/images/weberpenn_treegraph.png){width="30.0%"}

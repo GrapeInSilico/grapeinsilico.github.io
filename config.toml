@@ -18,7 +18,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
  [params.posts]
      folderName = "post"
      pageSize = "6"
-     featuredPost = true
+     featuredPost = false
      paginationPages = 2
      showFirstLast = false
  
