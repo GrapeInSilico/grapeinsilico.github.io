@@ -1,0 +1,14 @@
+name = "Massive Grape"
+description = "An open-source fork of 'massively' "
+homepage = "https://grapeinsilico.github.io"
+tags = ["portal", "html5up"]
+features = ["blog"]
+
+[author]
+    name = "Curtis Timson, Jazzsta"
+
+# Massively theme
+[original]
+    author = "HTML5UP"
+    homepage = "https://html5up.net"
+    repo = "https://html5up.net/massively"

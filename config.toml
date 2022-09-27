@@ -1,8 +1,8 @@
 relativeURLs = true
 languageCode = "en-us"
 title = "The grape"
-baseURL = "https://argent3.github.io"
-theme = "hugo-theme-massively"
+baseURL = "https://grapeinsilico.github.io"
+theme = "hugo-theme-massivegrape"
 #googleanalytics = ""
 #disqusShortname = ""
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
