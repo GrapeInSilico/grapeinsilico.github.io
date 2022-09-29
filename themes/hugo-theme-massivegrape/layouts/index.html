@@ -1,6 +1,6 @@
 {{ partial "htmlhead" . }}
 	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
-
+		
 		{{- $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
 		{{- $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
 
@@ -27,10 +27,10 @@
 
 		{{- $variable := $postsForPaging.ByParam "numero" -}}
 		{{- $postsPaging := .Paginate $variable $postsPageSize -}}
-
+			
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPostEnabled }}">
-
+				
 				{{- if eq $postsPaging.PageNumber 1 -}}
 				{{- partial "intro.html" . -}}
 				{{- end -}}
@@ -40,6 +40,9 @@
 
 				<!-- Main -->
 					<div id="main">
+						
+						
+						{{- partial "homepageresume.html"  . }}
 
 						{{- if (eq $postsFeaturedPostEnabled true) }}
 						{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}

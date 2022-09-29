@@ -75,7 +75,7 @@
 
 		> .posts {
 			@include fixed-grid((
-				columns:			2,
+				columns:			3,
 				gutters:			(_size(padding) * 4),
 				horizontal-align:	center,
 				vertical-align:		flex-start,
@@ -96,17 +96,17 @@
 				}
 
 				&:nth-child(2n - 1) {
-					border-left-width: 0;
+					border-left-width: 2px;
 				}
 
 				&:nth-child(-n + 2) {
-					border-top-width: 0;
+					border-top-width: 2px;
 				}
 			}
 
 			@include breakpoint('<=medium') {
 				@include fixed-grid-resize((
-					columns:			2,
+					columns:			3,
 					gutters:			(_size(padding) * 2.5),
 					flush:				false
 				));

@@ -1,6 +1,6 @@
 relativeURLs = true
 languageCode = "en-us"
-title = "The grape"
+title = "Grape In Silico"
 baseURL = "https://grapeinsilico.github.io"
 theme = "hugo-theme-massivegrape"
 #googleanalytics = ""
@@ -17,7 +17,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 # Below parameters can be set to override default post settings
  [params.posts]
      folderName = "post"
-     pageSize = "6"
+     pageSize = "9"
      featuredPost = false
      paginationPages = 2
      showFirstLast = false

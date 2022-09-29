@@ -2462,10 +2462,10 @@ table.alt tbody tr td {
       -ms-flex-grow: 0;
       flex-grow: 0; }
     #main > .posts > * {
-      width: 50%; }
+      width: 33.33333333%; }
     #main > .posts > * {
       padding: 4rem;
-      width: 50%; }
+      width: 33.33333333%; }
     #main > .posts > article {
       border-color: #eeeeee;
       border-left-width: 2px;
@@ -2475,15 +2475,15 @@ table.alt tbody tr td {
       #main > .posts > article > :last-child {
         margin-bottom: 0; }
       #main > .posts > article:nth-child(2n - 1) {
-        border-left-width: 0; }
+        border-left-width: 2px; }
       #main > .posts > article:nth-child(-n + 2) {
-        border-top-width: 0; }
+        border-top-width: 2px; }
     @media screen and (max-width: 980px) {
       #main > .posts > * {
-        width: 50%; }
+        width: 33.33333333%; }
       #main > .posts > * {
         padding: 2.5rem;
-        width: 50%; } }
+        width: 33.33333333%; } }
     @media screen and (max-width: 736px) {
       #main > .posts > * {
         width: 100%; }

@@ -1,0 +1,19 @@
+<!-- Project Resumé -->
+<!-- We assume that only one of the content files is of type resume so the below operation specifies this unique element -->
+{{- $homecontent := index (where .Site.RegularPages "Type" "resume") 0}}
+
+<div class="post featured">
+    <header class="major">
+        {{ if not .Date.IsZero }}
+        <span class="date">{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
+        {{ end }}
+        <h2>{{ $homecontent.Title }}</h2>
+    </header>
+    {{ if $homecontent.Params.image }}
+    <img src="{{ $homecontent.Params.image | relURL }}" alt="" />
+    {{ end }}
+    <p>
+    {{ $homecontent.Content }}</p>
+
+    
+</div>

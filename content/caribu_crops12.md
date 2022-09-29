@@ -1,6 +1,6 @@
 +++
 title ='Caribu Tutorial'
-slug = 'hundred_page'
+slug = 'hidden_page'
 description = 'CaribuScene 2'
 disableComments = true
 image = '/images/window/images.jpg'
