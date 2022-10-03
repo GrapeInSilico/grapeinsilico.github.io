@@ -8,9 +8,11 @@ numero = 2
 +++
 
 
-# Hydroshoot
+<!--# Hydroshoot-->
 
 *under construction*
+
+![3D Geometric Modelling and Visualisation](/images/hydroshoot/hydroshoot1.png)
 
 HydroShoot solves jointly the following processes:
 1. The hydraulic map of the shoot, that is the value of xylem water potential across all stem elements and petioles, following an Ohmic approach (Tyree and Evers, 1991 New Phytologist 119, 345-360).
