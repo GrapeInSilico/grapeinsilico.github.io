@@ -16,7 +16,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 # Below parameters can be set to override default post settings
  [params.posts]
-     folderName = "post"
+     folderName = "model"
      pageSize = "9"
      featuredPost = false
      paginationPages = 2
