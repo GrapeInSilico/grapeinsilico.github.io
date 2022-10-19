@@ -13,7 +13,7 @@ image = '/images/window/images.jpg'
 
 <html> 
   <body>
-  <iframe width=1000 height=900 src="/test.html" seamless></iframe>
+  <iframe width=1000 height=900 src="/test2.html" seamless></iframe>
 
 
   </body>
