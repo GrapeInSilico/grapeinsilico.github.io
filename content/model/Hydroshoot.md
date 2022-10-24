@@ -19,6 +19,32 @@ HydroShoot solves jointly the following processes:
 2. Leaf gas-exchange fluxes using the analytical solution of Yin and Struik (2009 Wageningen Journal of Life Sciences 57, 27-38) which couples the photosynthetic model of Farquhar et al. (1980 Planta 149, 78-90) to the stomatal conductance model of Leuning (1995 Plant, Cell and Environment 18, 339-355).
 3. Leaf energy budget considering radiative and convective transfers (Nobel P. 2005 Physicochemical and Environmental Plant Physiology. Elsevier Academic Press).
 
+### Gallery
+3D reconstruction of plant mockups
+
+![hydroshoot_mockups](/images/hydroshoot/mockups.png)
+
+Comparison of photosynthesis rates
+
+![hydroshoot_photosynthesis](/images/hydroshoot/photosynthesis.png)
+
+
+Comparison of transpiration rates
+
+![hydroshoot_transpiration](/images/hydroshoot/transpiration.png)
+
+
+Comparison of leaf temperature values
+
+![hydroshoot_tleaf](/images/hydroshoot/tleaf.png)
+
+
+Comparison of water potential values
+
+![hydroshoot_water_potential](/images/hydroshoot/water_potential.png)
+
+
+
 ### Links
 
 [**Tutorial**](https://hydroshoot.readthedocs.io/en/latest/)
