@@ -20,7 +20,7 @@ HydroShoot solves jointly the following processes:
 3. Leaf energy budget considering radiative and convective transfers (Nobel P. 2005 Physicochemical and Environmental Plant Physiology. Elsevier Academic Press).
 
 ### Gallery
-3D reconstruction of plant mockups
+3D reconstruction of plant mockups of grapevines trained on "Lyre" and "Espalier bas" systems
 
 ![hydroshoot_mockups](/images/hydroshoot/mockups.png)
 
@@ -42,6 +42,13 @@ Comparison of leaf temperature values
 Comparison of water potential values
 
 ![hydroshoot_water_potential](/images/hydroshoot/water_potential.png)
+
+
+
+Comparison of daily dynamics of absorbed radiation (a), photosynthesis rate (b),
+leaf temperature (c) and transpiration rate (d)
+
+![hydroshoot_water_potential](/images/hydroshoot/dynamic.png)
 
 
 
