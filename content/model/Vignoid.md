@@ -24,7 +24,7 @@ Output described, at each time step, number, age and pattern of healthy and infe
 
 ### Gallery
 Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010)
-![image](/images/vignoid/vignoidInteractionP6P2.png)
+![image](/images/vignoid/VignoidInter-P2P6.png)
 
 
 ![hydroshoot_mockups](/images/hydroshoot/mockups.png)
