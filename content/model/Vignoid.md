@@ -23,7 +23,9 @@ Output described, at each time step, number, age and pattern of healthy and infe
 
 
 ### Gallery
-3D reconstruction of plant mockups of grapevines trained on "Lyre" and "Espalier bas" systems
+Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010)
+![image](/images/vignoid/vignoidInteractionP6P2.png)
+
 
 ![hydroshoot_mockups](/images/hydroshoot/mockups.png)
 
