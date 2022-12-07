@@ -66,7 +66,11 @@ leaf temperature (c) and transpiration rate (d)
 
 ### Publications
 
-#### Albasha R, Fournier C, Pradal C, Chelle M, Prieto J, Louarn G, Simonneau T, Lebon E. 2019. HydroShoot: a functional-structural plant model for simulating hydraulic structure, gas and energy exchange dynamics of complex plant canopies under water deficit - application to grapevine (Vitisvinifera L.) in silico Plants, diz007.
+#### - Calonnec, A., Cartolaro, P., Naulin, J. M., Bailey, D., Langlais, M. (2008). "A host-pathogen simulation model: powdery mildew of grapevine." Plant Pathology 57: 493-508.
+- Burie, J. B., Langlais, M., Calonnec, A.(2011). "Switching from a mechanistic model to a continuous model to study at different scales the effect of vine growth on the dynamic of a powdery mildew epidemic." Annals of Botany 107(5): 885-895.
+	
+
+.
 # Virtual Berry
 
 *under construction*
