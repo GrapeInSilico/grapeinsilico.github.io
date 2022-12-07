@@ -14,10 +14,13 @@ numero = 2
 
 ### Summary
 
-HydroShoot solves jointly the following processes:
-1. The hydraulic map of the shoot, that is the value of xylem water potential across all stem elements and petioles, following an Ohmic approach (Tyree and Evers, 1991 New Phytologist 119, 345-360).
-2. Leaf gas-exchange fluxes using the analytical solution of Yin and Struik (2009 Wageningen Journal of Life Sciences 57, 27-38) which couples the photosynthetic model of Farquhar et al. (1980 Planta 149, 78-90) to the stomatal conductance model of Leuning (1995 Plant, Cell and Environment 18, 339-355).
-3. Leaf energy budget considering radiative and convective transfers (Nobel P. 2005 Physicochemical and Environmental Plant Physiology. Elsevier Academic Press).
+Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen Erysiphe necator. 
+The model input variables are either climatic (temperature, wind speed and direction) or related to the pathogen (location and onset of primary infection). The environmental input variables dictated plant growth and pathogen development (latent period, infection, lesion growth, conidial spore production and release). Leave’s susceptibility is function of its age at the time of its infection (ontogenic resistance) and on the amount of spore received.
+Input parameters characterized the crop production system (buds density, date and height of shoot topping, and fungicide treatment), the growth conditions and the epidemiological characteristics of the pathogen.
+Output described, at each time step, number, age and pattern of healthy and infected organs, infected and infectious leaf area and aerial density of spores released. 
+1.	Vignoid allowed to compare epidemic behavior for various contrasting years of crop development, phenological stages and showed the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season (Calonnec et al. 2008)
+2.	The plant vigour has an effect through the production of young susceptible leaves (Burie et al., 2011)
+
 
 ### Gallery
 3D reconstruction of plant mockups of grapevines trained on "Lyre" and "Espalier bas" systems
