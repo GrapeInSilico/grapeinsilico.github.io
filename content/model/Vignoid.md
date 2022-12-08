@@ -14,7 +14,7 @@ numero = 2
 
 ### Summary
 
-Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen Erysiphe necator. 
+Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen *Erysiphe necator*. 
 The model input variables are either climatic (temperature, wind speed and direction) or related to the pathogen (location and onset of primary infection). The environmental input variables dictated plant growth and pathogen development (latent period, infection, lesion growth, conidial spore production and release). Leave’s susceptibility is function of its age at the time of its infection (ontogenic resistance) and on the amount of spore received.
 Input parameters characterized the crop production system (buds density, date and height of shoot topping, and fungicide treatment), the growth conditions and the epidemiological characteristics of the pathogen.
 Output described, at each time step, number, age and pattern of healthy and infected organs, infected and infectious leaf area and aerial density of spores released. 
