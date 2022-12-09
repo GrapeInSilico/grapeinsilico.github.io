@@ -22,6 +22,9 @@ Output described, at each time step, **number, age and pattern of healthy and in
 1.	Vignoid allowed to compare epidemic behavior for various contrasting years of crop development, phenological stages and showed the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season **(Calonnec et al. 2008)**
 2.	The plant vigour has an effect through the production of young susceptible leaves **(Burie et al., 2011)**
 
+! [model] (/images/vignoid/model2.jpg)
+
+
 
 ### Gallery
 * Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010).
