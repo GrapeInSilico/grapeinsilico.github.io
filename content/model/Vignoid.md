@@ -13,7 +13,7 @@ numero = 2
 ### Summary
 
 Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen *Erysiphe necator*. 
-![Vignoid_model2]
+
 <p align="center">
 	<img src="/images/vignoid/model2.jpg" width="500" height="400">
 	</p>
@@ -30,30 +30,26 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
 
-![Vignoid_temporalLDdynamic]
 <p align="center">
 	<img src="/images/vignoid/temporalLDdynamics.jpg" width="720" height="300">
 	</p>
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves)
 
-![Vignoid_temporalLdynamic]
 <p align="center">
 	<img src="/images/vignoid/temporalLdynamic.jpg" width="350" height="300">
 	</p>
 
 * Temporal dynamics of the spore produced within the vine and exported
 
-![Vignoid_temporalSporesDynamic]
 <p align="center">
 	<img src="/images/vignoid/temporalSporesDynamic.jpg" width="350" height="300">
 	</p>
 
 * Simulation of the interaction between the dispersion parameter *cid* and  distance between shoots (d_buds) 20 days after shoot topping, for the climatic scenario 2010. Percentage indicate disease incidence or severity in brasket
 
-![Vignoid_VignoidInter-P2P6]
 <p align="center">
-	<img src="/images/vignoid/temporalSporesDynamic.jpg" width="400" height="400">
+	<img src="/images/vignoid/Vignoid-InterP2P6.jpg" width="400" height="400">
 	</p>
 
 
