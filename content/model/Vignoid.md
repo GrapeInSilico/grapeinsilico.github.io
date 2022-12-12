@@ -22,11 +22,18 @@ Output described, at each time step, **number, age and pattern of healthy and in
 1.	Vignoid allowed to compare epidemic behavior for various contrasting years of crop development, phenological stages and showed the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season **(Calonnec et al. 2008)**
 2.	The plant vigour has an effect through the production of young susceptible leaves **(Burie et al., 2011)**
 
-! [Vignoid_model](/images/vignoid/model2.jpg)
+! [Vignoid_model](/images/vignoid/model2.png)
 
 
 
 ### Gallery
+
+* Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
+
+* Temporal dynamics of plant growth (primary, secondary and total leaves) 
+
+* Temporal dynamics of the spore produced within the vine and exported
+
 * Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010).
 
 ![Vignoid_VignoidInter-P2P6](/images/vignoid/Vignoid-InterP2P6.png)
@@ -35,30 +42,6 @@ Output described, at each time step, **number, age and pattern of healthy and in
 ![hydroshoot_mockups](/images/hydroshoot/mockups.png)
 
 Comparison of photosynthesis rates
-
-![hydroshoot_photosynthesis](/images/hydroshoot/photosynthesis.png)
-
-
-Comparison of transpiration rates
-
-![hydroshoot_transpiration](/images/hydroshoot/transpiration.png)
-
-
-Comparison of leaf temperature values
-
-![hydroshoot_tleaf](/images/hydroshoot/tleaf.png)
-
-
-Comparison of water potential values
-
-![hydroshoot_water_potential](/images/hydroshoot/water_potential.png)
-
-
-
-Comparison of daily dynamics of absorbed radiation (a), photosynthesis rate (b),
-leaf temperature (c) and transpiration rate (d)
-
-![hydroshoot_water_potential](/images/hydroshoot/dynamic.png)
 
 
 
