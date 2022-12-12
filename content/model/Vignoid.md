@@ -16,13 +16,14 @@ numero = 2
 
 Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen *Erysiphe necator*. 
 
-The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictated plant growth and pathogen development** (latent period, infection, lesion growth, conidial spore production and release). Leave’s susceptibility is function of its age at the time of its infection (ontogenic resistance) and on the amount of spore received.
-**Input parameters** characterized the **crop production system** (buds density, date and height of shoot topping, and fungicide treatment), the **growth conditions** and the **epidemiological characteristics of the pathogen**.
-Output described, at each time step, **number, age and pattern of healthy and infected organs, infected and infectious leaf area and aerial density of spores released**. 
+The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictated plant growth and pathogen development** (latent period, infection I, colony growth, conidial spore production Q and release Qr). Leave’s susceptibility is function of its age (A) at the time of its infection (ontogenic resistance) and on the amount of spore catched (Qc).
+**Input parameters** characterized the **crop production system** (distance between buds, date and height of shoot topping, and vigour), the **growth conditions** (rate of leaves emergence, rate of leaves growth) and the **epidemiological characteristics of the pathogen**.
+Output described, at each time step, **number, age and pattern of healthy and infected organs, infected and infectious leaf area and density of spores released**. 
 1.	Vignoid allowed to compare epidemic behavior for various contrasting years of crop development, phenological stages and showed the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season **(Calonnec et al. 2008)**
 2.	The plant vigour has an effect through the production of young susceptible leaves **(Burie et al., 2011)**
 
 ![Vignoid_model2](/images/vignoid/model2.jpg)
+- representation of basic model processes with host and pathogen devlopments coupled through the spore's dispersal process and the leaves ontogenic resistance
 
 
 
