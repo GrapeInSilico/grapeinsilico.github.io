@@ -14,9 +14,8 @@ numero = 2
 
 Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen *Erysiphe necator*. 
 
-<p align="center">
-	<img src="/images/vignoid/model2.jpg" width="500" height="400">
-	</p>
+	<img src="/images/vignoid/model2.jpg" align="center" width="500" height="400">
+
 - representation of basic model processes with host and pathogen devlopments coupled through the spore's dispersal process and the leaves ontogenic resistance
 
 The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictated plant growth and pathogen development** (latent period, infection I, colony growth, conidial spore production Q and release Qr). Leave’s susceptibility is function of its age (A) at the time of its infection (ontogenic resistance) and on the amount of spore catched (Qc).
@@ -30,27 +29,19 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
 
-<p align="center">
-	<img src="/images/vignoid/temporalLDdynamics.jpg" width="720" height="300">
-	</p>
+	<img src="/images/vignoid/temporalLDdynamics.jpg" align="center" width="720" height="300">
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves)
 
-<p align="center">
-	<img src="/images/vignoid/temporalLdynamic.jpg" width="350" height="300">
-	</p>
+	<img src="/images/vignoid/temporalLdynamic.jpg" align="center" width="360" height="300">
 
 * Temporal dynamics of the spore produced within the vine and exported
 
-<p align="center">
-	<img src="/images/vignoid/temporalSporesDynamic.jpg" width="350" height="300">
-	</p>
+	<img src="/images/vignoid/temporalSporesDynamic.jpg" align="center" width="350" height="300">
 
 * Simulation of the interaction between the dispersion parameter *cid* and  distance between shoots (d_buds) 20 days after shoot topping, for the climatic scenario 2010. Percentage indicate disease incidence or severity in brasket
 
-<p align="center">
-	<img src="/images/vignoid/Vignoid-InterP2P6.jpg" width="400" height="400">
-	</p>
+	<img src="/images/vignoid/Vignoid-InterP2P6.jpg" align="center" width="450" height="450">
 
 
 
