@@ -29,7 +29,7 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
 
-![Vignoid_temporalLDdynamic](/images/vignoid/temporalLDdynamic.jpg)
+![Vignoid_temporalLDdynamic](/images/vignoid/temporalLDdynamics.jpg)
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves) 
 
@@ -41,7 +41,7 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010)
 
-![Vignoid_VignoidInter-P2P6](/images/vignoid/Vignoid-InterP2P6.png)
+![Vignoid_VignoidInter-P2P6](/images/vignoid/Vignoid-InterP2P6.jpg)
 
 
 
