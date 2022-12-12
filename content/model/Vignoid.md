@@ -37,7 +37,7 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 ![Vignoid_temporalSporesDynamic](/images/vignoid/temporalSporesDynamic.jpg)
 
-* Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010)
+* Simulation of the interaction between the dispersion parameter *cid* and  distance between shoots d_buds for the climatic scenario 2010. Percentage indicate disease incidence or severity in brasket
 
 ![Vignoid_VignoidInter-P2P6](/images/vignoid/Vignoid-InterP2P6.jpg)
 
