@@ -29,15 +29,15 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
 
-![Vignoid_temporalLDdynamics](/images/vignoid/temporalLDdynamics.png)
+![Vignoid_temporalLDdynamics](/images/vignoid/temporalLDdynamics.jpg)
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves) 
 
-![Vignoid_temporalLdynamic](/images/vignoid/temporalLdynamic.png)
+![Vignoid_temporalLdynamic](/images/vignoid/temporalLdynamic.jpg)
 
 * Temporal dynamics of the spore produced within the vine and exported
 
-![Vignoid_temporalSporesDynamic](/images/vignoid/temporalSporesDynamic.png)
+![Vignoid_temporalSporesDynamic](/images/vignoid/temporalSporesDynamic.jpg)
 
 * Simulation of the interaction between the dispersion parameter P6 (d) and  distance between shoots P2 (d_buds) (year 2010)
 
