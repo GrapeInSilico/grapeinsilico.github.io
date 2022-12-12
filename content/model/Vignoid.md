@@ -39,21 +39,21 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves)
-<div style="align: center; width: 360; height: 300">
+<div style="align: center; width: 320; height: 300">
 
 ![Vignoid_temporalLdynamic.jpg](/images/vignoid/temporalLdynamic.jpg)
 	
 </div>
 
 * Temporal dynamics of the spore produced within the vine and exported
-<div style="align: center; width: 350; height: 300">
+<div style="align: center; width: 320; height: 300">
 
 ![Vignoid_temporalSporesDynamic.jpg](/images/vignoid/temporalSporesDynamic.jpg)
 	
 </div>
 
 * Simulation of the interaction between the dispersion parameter *cid* and  distance between shoots (d_buds) 20 days after shoot topping, for the climatic scenario 2010. Percentage indicate disease incidence or severity in brasket
-<div style="align: center; width: 500; height: 500">
+<div style="align: center; width: 400; height: 400">
 
 ![Vignoid_Vignoid-InterP2P6.jpg](/images/vignoid/Vignoid-InterP2P6.jpg)
 	
