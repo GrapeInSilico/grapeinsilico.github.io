@@ -29,7 +29,7 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios 
 
-![Vignoid_temporalLDdynamics](/images/vignoid/temporalLDdynamics.jpg)
+![Vignoid_temporalLDdynamic](/images/vignoid/temporalLDdynamic.jpg)
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves) 
 
