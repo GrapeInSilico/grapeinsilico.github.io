@@ -31,7 +31,7 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves) 
 
-![Vignoid_temporalLdynamic](/images/vignoid/temporalLdynamic.jpg)
+![Vignoid_temporalLdynamic] <img src="/images/vignoid/temporalLdynamic.jpg" width="48"/>
 
 * Temporal dynamics of the spore produced within the vine and exported
 
