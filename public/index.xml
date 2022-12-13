@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The grape</title>
-    <link>https://argent3.github.io/</link>
-    <description>Recent content on The grape</description>
+    <title>Grape In Silico</title>
+    <link>https://grapeinsilico.github.io/</link>
+    <description>Recent content on Grape In Silico</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://argent3.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://grapeinsilico.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Application Domains</title>
-      <link>https://argent3.github.io/post/post11/</link>
+      <link>https://grapeinsilico.github.io/testpages/post11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post11/</guid>
-      <description>Application Domains This is a thing to do with the thing that is.</description>
+      <guid>https://grapeinsilico.github.io/testpages/post11/</guid>
+      <description>Application Domains This is a thing to do with the thing that is.
+WHAT IS THE TIME ?</description>
+    </item>
+    
+    <item>
+      <title>Application Scenarios</title>
+      <link>https://grapeinsilico.github.io/usecases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/usecases/</guid>
+      <description>Coupled models (under construction)</description>
     </item>
     
     <item>
       <title>Caribu Tutorial</title>
-      <link>https://argent3.github.io/hundred_page/</link>
+      <link>https://grapeinsilico.github.io/hidden_page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/hundred_page/</guid>
+      <guid>https://grapeinsilico.github.io/hidden_page/</guid>
       <description>Caribu Tutorial Agagin test
 sdqdjknsqld
 import openalea.plantgl.all as pgl from alinea.caribu.CaribuScene import CaribuScene from alinea.caribu.data_samples import data_path can = str(data_path(&amp;#39;f331s1_100plantes.can&amp;#39;)) sky = str(data_path(&amp;#39;Turtle16soc.light&amp;#39;)) opts = map(str, [data_path(&amp;#39;par.opt&amp;#39;), data_path(&amp;#39;nir.opt&amp;#39;)]) #pattern = str(data_path(&amp;#39;filter.8&amp;#39;)) # complete set of files cs = CaribuScene(scene=can, light=sky, opt=opts, ) #pattern=pattern) raw,agg=cs.run(simplify=True) NOT using graph editor observer No module named grapheditorscene,values = cs.plot(raw[&amp;#39;par&amp;#39;][&amp;#39;Ei&amp;#39;],display=False) import numpy as np v99 = np.percentile(values, 99) nvalues=np.array(values) nvalues[nvalues&amp;gt;v99]=v99 values = nvalues.tolist() from oawidgets.</description>
@@ -28,44 +38,51 @@ import openalea.plantgl.all as pgl from alinea.caribu.CaribuScene import CaribuS
     
     <item>
       <title>Caribu Tutorial 3</title>
-      <link>https://argent3.github.io/third_page/</link>
+      <link>https://grapeinsilico.github.io/third_page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/third_page/</guid>
+      <guid>https://grapeinsilico.github.io/third_page/</guid>
       <description>Caribu Tutorial test
-sdqdjknsqld
+sdqdjknsqld1
 import openalea.plantgl.all as pgl from alinea.caribu.CaribuScene import CaribuScene from alinea.caribu.data_samples import data_path can = str(data_path(&amp;#39;f331s1_100plantes.can&amp;#39;)) sky = str(data_path(&amp;#39;Turtle16soc.light&amp;#39;)) opts = map(str, [data_path(&amp;#39;par.opt&amp;#39;), data_path(&amp;#39;nir.opt&amp;#39;)]) #pattern = str(data_path(&amp;#39;filter.8&amp;#39;)) # complete set of files cs = CaribuScene(scene=can, light=sky, opt=opts, ) #pattern=pattern) raw,agg=cs.run(simplify=True) NOT using graph editor observer No module named grapheditorscene,values = cs.plot(raw[&amp;#39;par&amp;#39;][&amp;#39;Ei&amp;#39;],display=False) import numpy as np v99 = np.percentile(values, 99) nvalues=np.array(values) nvalues[nvalues&amp;gt;v99]=v99 values = nvalues.tolist() from oawidgets.plantgl import * PlantGL(scene, group_by_color=False, property=values) UGxvdChhbnRpYWxpYXM9MywgYXhlcz1bJ3gnLCAneScsICd6J10sIGJhY2tncm91bmRfY29sb3I9MTY3NzcyMTUsIGNhbWVyYT1bNC41LCA0LjUsIDQuNSwgMC4wLCAwLjAsIDAuMCwgMS4wLCDigKY=</description>
     </item>
     
     <item>
-      <title>Gallery</title>
-      <link>https://argent3.github.io/fourth_page/</link>
+      <title>Contributing Research Units</title>
+      <link>https://grapeinsilico.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/fourth_page/</guid>
-      <description>Gallery {width=&amp;ldquo;30.0%&amp;rdquo;}
-{width=&amp;ldquo;30.0%&amp;rdquo;}
-{width=&amp;ldquo;30.0%&amp;rdquo;}
-{width=&amp;ldquo;30.0%&amp;rdquo;}
-{width=&amp;ldquo;30.0%&amp;rdquo;}
-{width=&amp;ldquo;100.0%&amp;rdquo;}</description>
+      <guid>https://grapeinsilico.github.io/contact/</guid>
+      <description>LEPSE (under construction)
+EGFV (under construction)
+SAVE (under construction)</description>
     </item>
     
     <item>
-      <title>Help</title>
-      <link>https://argent3.github.io/second_page/</link>
+      <title>Grapevine XL</title>
+      <link>https://grapeinsilico.github.io/model/grapevinexl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/second_page/</guid>
-      <description>Help Need help ? Want to contact someone ? Contact prenon.nom@machin.fr.</description>
+      <guid>https://grapeinsilico.github.io/model/grapevinexl/</guid>
+      <description>Grapevine XL under construction</description>
+    </item>
+    
+    <item>
+      <title>Hydroshoot</title>
+      <link>https://grapeinsilico.github.io/model/hydroshoot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/hydroshoot/</guid>
+      <description>Summary HydroShoot solves jointly the following processes:
+The hydraulic map of the shoot, that is the value of xylem water potential across all stem elements and petioles, following an Ohmic approach (Tyree and Evers, 1991 New Phytologist 119, 345-360). Leaf gas-exchange fluxes using the analytical solution of Yin and Struik (2009 Wageningen Journal of Life Sciences 57, 27-38) which couples the photosynthetic model of Farquhar et al. (1980 Planta 149, 78-90) to the stomatal conductance model of Leuning (1995 Plant, Cell and Environment 18, 339-355).</description>
     </item>
     
     <item>
       <title>HydroShoot Tutorial - Grapevine</title>
-      <link>https://argent3.github.io/post/post24/</link>
+      <link>https://grapeinsilico.github.io/testpages/post24/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post24/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post24/</guid>
       <description>HydroShoot Tutorial - Grapevine Authors : R.Albasha, C.Fournier, C.Pradal, M.Chelle, J.A Prieto, G.Louarn, T.Simonneau, E.Lebon Publication : https://doi.org/10.1093/insilicoplants/diz007 HydroShoot is a functional-structural plant model that simulates the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, at the organ level.
 In this tutorial, we will :
 reconstruct in 3D the shoot architecture of a vine from plant digitalization data simulate hydraulic structure, gas and energy exchange dynamics 3D reconstruction of vine architecture Let&amp;rsquo;s import all the packages we need for this tutorial.</description>
@@ -73,10 +90,10 @@ reconstruct in 3D the shoot architecture of a vine from plant digitalization dat
     
     <item>
       <title>Indices and tables</title>
-      <link>https://argent3.github.io/post/post3/</link>
+      <link>https://grapeinsilico.github.io/testpages/post3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post3/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post3/</guid>
       <description>{width=&amp;ldquo;30.0%&amp;rdquo;}
 {width=&amp;ldquo;30.0%&amp;rdquo;}
 {width=&amp;ldquo;30.0%&amp;rdquo;}
@@ -85,10 +102,10 @@ Indices and tables genindex{.interpreted-text role=&amp;ldquo;ref&amp;rdquo;} mo
     
     <item>
       <title>Installation</title>
-      <link>https://argent3.github.io/post/post4/</link>
+      <link>https://grapeinsilico.github.io/testpages/post4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post4/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post4/</guid>
       <description>Installation Conda Installation Conda is a package manager that can be installed on Linux, Windows, and Mac. If you have not yet installed conda on your computer, follow these instructions : Conda Installation.
 OpenAlea Installation The recommended way to install OpenAlea is to create a new conda environment.
 First, create an environment named openalea:
@@ -97,10 +114,10 @@ Launch a console or a terminal (See Anaconda Prompt in Start menu on windows). I
     
     <item>
       <title>Introduction</title>
-      <link>https://argent3.github.io/post/post8/</link>
+      <link>https://grapeinsilico.github.io/testpages/post8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post8/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post8/</guid>
       <description>+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | Development | +==============+ | | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | ::: contents | | Contents | | ::: | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | &amp;gt; local | | &amp;gt; | | &amp;gt; : | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ | Contributing | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+
 Introduction OpenAlea is open-source. Everyone is welcome to contribute.
 ::: note ::: title Note :::
@@ -110,10 +127,10 @@ the official and stable packages on OpenAlea the unofficial, WIP and to be revie
     
     <item>
       <title>License</title>
-      <link>https://argent3.github.io/post/post5/</link>
+      <link>https://grapeinsilico.github.io/testpages/post5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post5/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post5/</guid>
       <description>License The OpenAlea core is released under the Cecill-C license. The OpenAlea GUI, Visualea, is released under the Cecill-v2 license. ::: note ::: title Note :::
 Each external package can have its own license, please check it before using a package. :::
 You can refer to the document Package License Guidelines for futher explanations.
@@ -121,14 +138,25 @@ Please, cite the project if you use OpenAlea in your publications.</description>
     </item>
     
     <item>
-      <title>Packages</title>
-      <link>https://argent3.github.io/post/post9/</link>
+      <title>Musca</title>
+      <link>https://grapeinsilico.github.io/model/musca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post9/</guid>
-      <description>Packages |
+      <guid>https://grapeinsilico.github.io/model/musca/</guid>
+      <description>Musca under construction
+Test equation
+When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+F Reyes, B Pallas, C Pradal, F Vaggi, D Zanotelli, M Tagliavini, D Gianelle, E Costes, MuSCA: a multi-scale source–sink carbon allocation model to explore carbon allocation in plants. An application to static apple tree structures, Annals of Botany, Volume 126, Issue 4, 14 September 2020, Pages 571–585, https://doi.</description>
+    </item>
+    
+    <item>
+      <title>Packages</title>
+      <link>https://grapeinsilico.github.io/testpages/post9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/testpages/post9/</guid>
+      <description>Packagess |
 Modelling with OpenAlea MTG Multiscale Tree Graph datastructure and interfaces
-{.align-left width=&amp;ldquo;200px&amp;rdquo;}
 MTG package aims to define :
 A share data structure for plant architecture representation. Read and write MTG files. Export to various graph format. Several algorithms for MTG. Authors : Christophe Pradal, Christophe Godin
 Institutes : Cirad, Inria
@@ -139,25 +167,99 @@ L-systems were conceived as a mathematical framework for modeling growth of plan
     </item>
     
     <item>
-      <title>Tutorials</title>
-      <link>https://argent3.github.io/post/post12/</link>
+      <title>Phenology</title>
+      <link>https://grapeinsilico.github.io/model/phenology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post12/</guid>
+      <guid>https://grapeinsilico.github.io/model/phenology/</guid>
+      <description>Vine Phenology under construction</description>
+    </item>
+    
+    <item>
+      <title>Root Models</title>
+      <link>https://grapeinsilico.github.io/model/vinerootmodels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/vinerootmodels/</guid>
+      <description>Vine Root Models under construction</description>
+    </item>
+    
+    <item>
+      <title>The Grape-In-Silico Environment</title>
+      <link>https://grapeinsilico.github.io/gis_tuto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/gis_tuto/</guid>
+      <description>TUTORIAL Under construction</description>
+    </item>
+    
+    <item>
+      <title>The Project</title>
+      <link>https://grapeinsilico.github.io/prejectresume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/prejectresume/</guid>
+      <description>The objective of GrapeInSilico is to create a modelling and simulation environment for the vine and the vineyard, which will be modular and integrative, allowing to promote and distribute the latest developments for a variety of applications. The project includes in a large cycle of researchers (4 laboratories are involved: LEPSE, AGAP, EFGV &amp;amp; SAVE). The main stake is the advancement of a collective modelling strategy that facilitates the transmission, the sharing and the valorisation of knowledge that is currently dispersed in different models that are not directly interoperable.</description>
+    </item>
+    
+    <item>
+      <title>TopVine-ArchiDigit</title>
+      <link>https://grapeinsilico.github.io/model/topvine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/topvine/</guid>
+      <description>Top Vine under construction
+Gaëtan Louarn, Jérémie Lecoeur, Eric Lebon, A Three-dimensional Statistical Reconstruction Model of Grapevine (Vitis vinifera) Simulating Canopy Structure Variability within and between Cultivar/Training System Pairs, Annals of Botany, Volume 101, Issue 8, May 2008, Pages 1167–1184, https://doi.org/10.1093/aob/mcm170 </description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://grapeinsilico.github.io/testpages/post12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/testpages/post12/</guid>
       <description>Tutorials Here are some interactive tutorials that can help you in your projects.
 ::: {.toctree maxdepth=&amp;ldquo;2&amp;rdquo;} visualea/beginner.rst visualea/weberpenn.rst :::</description>
     </item>
     
     <item>
       <title>Using Visualea : Beginning</title>
-      <link>https://argent3.github.io/post/post14/</link>
+      <link>https://grapeinsilico.github.io/testpages/post14/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://argent3.github.io/post/post14/</guid>
+      <guid>https://grapeinsilico.github.io/testpages/post14/</guid>
       <description>Using Visualea : Beginning Here is a tutorial in which you will see how to implement a simple modeling problem in Visualea
 Here is what you need for the following tutorial :: conda create -n visualea_tuto -c openalea openalea.visualea openalea.components openalea.plantgl boost=1.66 -c openalea/label/unstable conda activate visualea_tuto
 Once you installed and activated the OpenAlea environment (see Installation), execute this :
 visualeaThe Goal We measured some tree data and saved these in a tabbed editor (like Excel).</description>
+    </item>
+    
+    <item>
+      <title>Vignoid</title>
+      <link>https://grapeinsilico.github.io/model/vignoid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/vignoid/</guid>
+      <description>Summary Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen Erysiphe necator.
+representation of basic model processes with host and pathogen developments coupled through the spore&amp;rsquo;s dispersal process and the leaves ontogenic resistance The model input variables are either climatic (temperature, wind speed and direction) or related to the pathogen (location and onset of primary infection).</description>
+    </item>
+    
+    <item>
+      <title>Virtual Berry</title>
+      <link>https://grapeinsilico.github.io/model/virtualberry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/virtualberry/</guid>
+      <description>Virtual Berry under construction</description>
+    </item>
+    
+    <item>
+      <title>Water Balance</title>
+      <link>https://grapeinsilico.github.io/model/vinewaterbalance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://grapeinsilico.github.io/model/vinewaterbalance/</guid>
+      <description>Summary Un mot.</description>
     </item>
     
   </channel>
