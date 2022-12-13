@@ -31,7 +31,7 @@ Output describe, at each time step, **number, age and pattern of healthy and inf
 ### Gallery
 
 * Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios. 
-<div style="align: center; width: 80%">
+<div style="align: center; width: 90%">
 	
 ![Vignoid_temporalLDdynamics.jpg](/images/vignoid/temporalLDdynamics.jpg)
 	
@@ -39,7 +39,7 @@ Output describe, at each time step, **number, age and pattern of healthy and inf
 
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves)
-<div style="align: center; width: 80%">
+<div style="align: center; width: 70%">
 
 ![Vignoid_temporalLdynamic.jpg](/images/vignoid/temporalLdynamic.jpg)
 	
