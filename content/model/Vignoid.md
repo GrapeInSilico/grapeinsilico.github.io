@@ -21,10 +21,10 @@ Vignoid is an epidemiological model simulating the growth of a single grapevine 
 
 - representation of basic model processes with host and pathogen devlopments coupled through the spore's dispersal process and the leaves ontogenic resistance
 
-The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictated plant growth and pathogen development** (latent period, infection I, colony growth, conidial spore production Q and release Qr). Leave’s susceptibility is function of its age (A) at the time of its infection (ontogenic resistance) and on the amount of spore catched (Qc).
-**Input parameters** characterized the **crop production system** (distance between buds, date and height of shoot topping, and vigour), the **growth conditions** (rate of leaves emergence, rate of leaves growth) and the **epidemiological characteristics of the pathogen**.
-Output described, at each time step, **number, age and pattern of healthy and infected organs, infected and infectious leaf area and density of spores released**. 
-1.	Vignoid allowed to compare epidemic behavior for various contrasting years of crop development, phenological stages and showed the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season **(Calonnec et al. 2008)**
+The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictate plant growth and pathogen development** (latent period, infection I, colony growth, spore production Q and release Qr). Leave’s susceptibility is function of its age (A) at the time of its infection (ontogenic resistance) and on the amount of spore catched by the infected leaf (Qc).
+**Input parameters** characterize the **crop production system** (distance between buds, date and height of shoot topping, and vigour), the **growth conditions** (rate of leaves emergence, rate of leaf growth) and the **epidemiological characteristics of the pathogen**.
+Output describe, at each time step, **number, age and pattern of healthy and infected organs, infected and infectious leaf area and density of spores released**. 
+1.	Vignoid allows to compare epidemic behavior for various contrasting years of crop development, phenological stages and shows the key effect of the date of initial infection on the level of disease severity at flowering and at the end of the season **(Calonnec et al. 2008)**
 2.	The plant vigour has an effect through the production of young susceptible leaves **(Burie et al., 2011)**
 
 
@@ -39,21 +39,21 @@ Output described, at each time step, **number, age and pattern of healthy and in
 
 
 * Temporal dynamics of plant growth (primary, secondary and total leaves)
-<div style="align: center; width: 320; height: 300">
+<div style="align: center; width: 300; height: 280">
 
 ![Vignoid_temporalLdynamic.jpg](/images/vignoid/temporalLdynamic.jpg)
 	
 </div>
 
 * Temporal dynamics of the spore produced within the vine and exported
-<div style="align: center; width: 320; height: 300">
+<div style="align: center; width: 300; height: 280">
 
 ![Vignoid_temporalSporesDynamic.jpg](/images/vignoid/temporalSporesDynamic.jpg)
 	
 </div>
 
 * Simulation of the interaction between the dispersion parameter *cid* and  distance between shoots (d_buds) 20 days after shoot topping, for the climatic scenario 2010. Percentage indicate disease incidence or severity in brasket
-<div style="align: center; width: 400; height: 400">
+<div style="align: center; width: 300; height: 300">
 
 ![Vignoid_Vignoid-InterP2P6.jpg](/images/vignoid/Vignoid-InterP2P6.jpg)
 	
