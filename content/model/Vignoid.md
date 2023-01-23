@@ -19,7 +19,7 @@ Vignoid is an epidemiological model simulating the growth of a single grapevine 
 	
 </div>
 
-- representation of basic model processes with host and pathogen developments coupled through the spore's dispersal process and the leaves ontogenic resistance
+- representation of basic model processes with host (grapevine stock) and pathogen (*Erysiphe necator*) developments coupled through the spore's dispersal process and the leaves ontogenic resistance
 
 The model **input variables** are either **climatic** (temperature, wind speed and direction) or related to the **pathogen** (location and onset of primary infection). The environmental **input variables dictate plant growth and pathogen development** (latent period, infection I, colony growth, spore production Q and release Qr). Leave’s susceptibility is function of its age (A) at the time of its infection (ontogenic resistance) and on the amount of spore catched by the infected leaf (Qc).
 **Input parameters** characterize the **crop production system** (distance between buds, date and height of shoot topping, and vigour), the **growth conditions** (rate of leaves emergence, rate of leaf growth) and the **epidemiological characteristics of the pathogen**.
@@ -30,7 +30,7 @@ Output describe, at each time step, **number, age and pattern of healthy and inf
 
 ### Gallery
 
-* Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios. 
+* Temporal dynamics of the disease evolution according to the phenological stage at the date of inoculation, for two climatic scenarios. The proportion of diseased leaves at the end of the season is highly dependent on the phenological stage at the time of inoculation and can be very different at flowering time, function of the climatic scenario due to difference of grapevine growth.
 <div style="align: center; width: 90%">
 	
 ![Vignoid_temporalLDdynamics.jpg](/images/vignoid/temporalLDdynamics.jpg)
