@@ -54,10 +54,10 @@ leaf temperature (c) and transpiration rate (d)
 
 ### Links
 
-[**Tutorial**](https://hydroshoot.readthedocs.io/en/latest/)
+[![**Demo**](/images/icons/demobutton.png)](https://nbviewer.org/github/openalea/openalea.rtfd.io/blob/master/example/hydroshoot_grapevine.ipynb)
+[![**Doc**](/images/icons/docbutton.png)](https://hydroshoot.readthedocs.io/en/latest/)
+[![**Code**](/images/icons/codebutton.png)](https://github.com/openalea/hydroshoot)
 
-
-[**Code**](https://github.com/openalea/hydroshoot)
 
 
 
