@@ -11,6 +11,9 @@ katex = true
 
 # Musca
 
+Musca is a model dedicated to the simulation of carbon allocation in plants. It has been first used to simulate fruit growth variation within apple tree structure. Nevertheless its formalisms based on MTGs are generic enough to be adapted to a large set of plants including grapevine. 
+
+
 *under construction*
 
 Test equation
