@@ -8,20 +8,20 @@ image = '/images/window/recherche.jpg'
 
 ## Scientific contacts 
 
-Christian Fournier
-[UMR 759 LEPSE](https://www6.montpellier.inrae.fr/lepse) - Montpellier
+Christian Fournier<br>
+[UMR 759 LEPSE](https://www6.montpellier.inrae.fr/lepse) - Montpellier<br>
 christian.fournier@inrae.fr
 
 Philippe Vivin<br>
-[UMR 1287 EGFV](https://www6.bordeaux-aquitaine.inrae.fr/egfv/) - Bordeaux
+[UMR 1287 EGFV](https://www6.bordeaux-aquitaine.inrae.fr/egfv/) - Bordeaux<br>
 philippe.vivin@inrae.fr
 
 Agnès Calonnec<br>
-[UMR 1287 EGFV] (https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble/) :computer:  - Bordeaux
+[UMR 1065 SAVE](https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble/) - Bordeaux<br>
 agnes.calonnec@inrae.fr
 
 ## Partnership contact
 
-[Institut Carnot Plant2Pro] (https://plant2pro.fr/)
+[Institut Carnot Plant2Pro](https://plant2pro.fr/)<br>
 plant2pro@instituts-carnots.fr
 
