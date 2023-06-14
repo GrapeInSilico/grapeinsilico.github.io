@@ -1,27 +1,27 @@
 +++
-title ='Contributing Research Units'
+title ='Contributors'
 slug = 'contact'
-description = 'Research teams'
+description = false
 disableComments = true
 image = '/images/window/recherche.jpg'
 +++
 
-## Contacts scientifiques
+# Scientific contacts 
 
 Christian Fournier<br>
-<a href=[https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble](https://www6.montpellier.inrae.fr/lepse)>UMR 759 LEPSE - Montpellier</a><br>
+<a href=https://www6.montpellier.inrae.fr/lepse)>UMR 759 LEPSE (Montpellier)</a><br>
 christian.fournier@inrae.fr
 
 Philippe Vivin<br>
-<a href=https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble>UMR 1287 EGFV (Ecophysiologie et Génomique de la Vigne) - Bordeaux</a><br>
+<a href=https://www6.bordeaux-aquitaine.inrae.fr/egfv/)>UMR 1287 EGFV (Bordeaux)</a><br>
 philippe.vivin@inrae.fr
 
 Agnès Calonnec<br>
-<a href=https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble>UMR 1065 SAVE (Santé et Agroécologie du Vignoble) - Bordeaux</a><br>
+<a href=https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble/>UR 1065 SAVE (Bordeaux)</a><br>
 agnes.calonnec@inrae.fr
 
-## Contact scientifique
+## Partnership contact
 
-
+<a href=https://plant2pro.fr/>Institut Carnot Plant2Pro</a><br>
 plant2pro@instituts-carnots.fr
 
