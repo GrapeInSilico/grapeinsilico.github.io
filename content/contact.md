@@ -9,19 +9,24 @@ image = '/images/window/recherche.jpg'
 ## LEPSE
 
 
-*(under construction)*
+UMR 759 LEPSE
+Christian Fournier
+christian.fournier@inrae.fr
 
 
 ## EGFV
 
 
-*(under construction)*
+UMR 1287 EGFV
+Philippe Vivin
+philippe.vivin@inrae.fr
 
 
 
 ## SAVE
 
-
-*(under construction)*
+UMR 1065 Santé et Agrécologie du Vignoble (SAVE)
+Agnès Calonnec
+agnes.calonnec@inrae.fr
 
 
