@@ -1,7 +1,7 @@
 +++
 title ='Contributors'
 slug = 'contact'
-description = false
+description = ''
 disableComments = true
 image = '/images/window/recherche.jpg'
 +++
