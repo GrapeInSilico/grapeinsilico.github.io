@@ -6,6 +6,7 @@ theme = "hugo-theme-massivegrape"
 #googleanalytics = ""
 #disqusShortname = ""
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+enableEmoji = true
 
  [params]
   # set below parameter to define a favicon
