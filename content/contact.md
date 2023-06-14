@@ -13,15 +13,15 @@ Christian Fournier<br>
 christian.fournier@inrae.fr
 
 Philippe Vivin<br>
-[UMR 1287 EGFV](https://www6.bordeaux-aquitaine.inrae.fr/egfv/) - Bordeaux<br>
+[UMR 1287 EGFV](https://www6.bordeaux-aquitaine.inrae.fr/egfv/) - Bordeaux :fr:<br>
 philippe.vivin@inrae.fr
 
 Agnès Calonnec<br>
-[UMR 1065 SAVE](https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble/) - Bordeaux<br>
+[UMR 1065 SAVE](https://www6.bordeaux-aquitaine.inrae.fr/sante-agroecologie-vignoble/) - Bordeaux :fr:<br>
 agnes.calonnec@inrae.fr
 
 ## Partnership contact
 
-[Institut Carnot Plant2Pro](https://plant2pro.fr/) - Paris<br>
+[Institut Carnot Plant2Pro](https://plant2pro.fr/) - Paris :fr:<br>
 plant2pro@instituts-carnots.fr
 
