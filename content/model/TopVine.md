@@ -7,9 +7,14 @@ image = '/images/icons/1635265_l.png'
 numero = 1
 +++
 
+### Description
 
-# Top Vine
+*to be completed*
 
-*under construction*
+### Gallery
 
-#### Gaëtan Louarn, Jérémie Lecoeur, Eric Lebon, A Three-dimensional Statistical Reconstruction Model of Grapevine (Vitis vinifera) Simulating Canopy Structure Variability within and between Cultivar/Training System Pairs, Annals of Botany, Volume 101, Issue 8, May 2008, Pages 1167–1184,  <a href="https://doi.org/10.1093/aob/mcm170" >https://doi.org/10.1093/aob/mcm170</a>
+### Links
+
+### Scientific publications
+
+- Louarn G, Lecoeur J, Lebon E (2008) A three-dimensional statistical reconstruction model of grapevine (Vitis vinifera) simulating canopy structure variability within and between cultivar/training system pairs. Annals of Botany 101: 1167–1184.  [:page_facing_up:](https://doi.org/10.1093/aob/mcm170)
