@@ -12,7 +12,7 @@ numero = 2
 
 ![3D Geometric Modelling and Visualisation](/images/hydroshoot/hydroshoot1.png)
 
-### Summary
+### Description
 
 HydroShoot solves jointly the following processes:
 1. The hydraulic map of the shoot, that is the value of xylem water potential across all stem elements and petioles, following an Ohmic approach (Tyree and Evers, 1991 New Phytologist 119, 345-360).
@@ -61,6 +61,7 @@ leaf temperature (c) and transpiration rate (d)
 
 
 
-### Publications
+### Scientific publications
 
-#### Albasha R, Fournier C, Pradal C, Chelle M, Prieto J, Louarn G, Simonneau T, Lebon E. 2019. HydroShoot: a functional-structural plant model for simulating hydraulic structure, gas and energy exchange dynamics of complex plant canopies under water deficit - application to grapevine (Vitisvinifera L.) in silico Plants, diz007.
+- Albasha R, Fournier C, Pradal C, Chelle M, Prieto J, Louarn G, Simonneau T, Lebon E (2019) HydroShoot: a functional-structural plant model for simulating hydraulic structure, gas and energy exchange dynamics of complex plant canopies under water deficit - application to grapevine (*Vitis vinifera L.*). *in silico* Plants 1: diz007.
+- https://doi.org/10.1093/insilicoplants/diz007
