@@ -10,7 +10,7 @@ numero = 2
 
 <!--# Vignoid-->
 
-### Summary
+### Description
 
 Vignoid is an epidemiological model simulating the growth of a single grapevine stock coupled to the dispersal and disease dynamics of the airborne conidia of powdery mildew pathogen *Erysiphe necator*. 
 <div style="align: center; width: 60%">
@@ -60,21 +60,14 @@ Output describe, at each time step, **number, age and pattern of healthy and inf
 </div>
 
 
-
-
 ### Links
 
 [**Tutorial**](https://hydroshoot.readthedocs.io/en/latest/)
 
-
 [**Code**](https://github.com/openalea/hydroshoot)
 
 
+### Scientific publications
 
-### Publications
-
-- Calonnec, A., Cartolaro, P., Naulin, J. M., Bailey, D., Langlais, M. (2008). "A host-pathogen simulation model: powdery mildew of grapevine." Plant Pathology 57: 493-508.
-- Burie, J. B., Langlais, M., Calonnec, A.(2011). "Switching from a mechanistic model to a continuous model to study at different scales the effect of vine growth on the dynamic of a powdery mildew epidemic." Annals of Botany 107(5): 885-895.
-	
-
-
+- Calonnec A, Cartolaro P, Naulin JM, Bailey D, Langlais M (2008) A host-pathogen simulation model: powdery mildew of grapevine. Plant Pathology 57: 493-508.  [:page_facing_up:](https://doi.org/10.1111/j.1365-3059.2007.01783.x)
+- Burie JB, Langlais M, Calonnec A (2011) Switching from a mechanistic model to a continuous model to study at different scales the effect of vine growth on the dynamic of a powdery mildew epidemic. Annals of Botany 107: 885-895.  [:page_facing_up:](https://doi.org/10.1093/aob/mcq233)
