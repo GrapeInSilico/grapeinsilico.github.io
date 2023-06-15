@@ -11,9 +11,13 @@ numero = 5
 ### Description
 GrapevineXL is a whole-plant functional–structural grapevine model which simulates the stomatal function and photosynthesis at the leaf level, the dynamics of water transport from soil to individual leaves, the biophysical berry growth and sugar accumulation as a function of water and carbon balance in response to canopy architecture, leaf-to-fruit ratio, climate, and soil conditions.
 
+*to be completed*
+
 ### Gallery
 
+
 ### Links
+
 
 ### Scientific publications
 
