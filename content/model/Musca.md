@@ -13,13 +13,16 @@ katex = true
 
 Musca is a model dedicated to the simulation of carbon allocation in plants. It has been first used to simulate fruit growth variation within apple tree structure. Nevertheless its formalisms based on MTGs are generic enough to be adapted to a large set of plants including grapevine. 
 
+*to be completed*
 
-*under construction*
 
-<!-- Test equation-->
-
-<!--When \\(a \ne 0\\), there are two solutions to \\((ax^2 + bx + c = 0)\\) and they are 
+<!-- Test equation
+When \\(a \ne 0\\), there are two solutions to \\((ax^2 + bx + c = 0)\\) and they are 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$ -->
+
+## Gallery
+
+## Links
 
 ## Scientific publications
 
