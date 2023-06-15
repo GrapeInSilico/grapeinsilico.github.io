@@ -2,7 +2,7 @@
 title ='Vignoid'
 slug = 'vignoid'
 disableComments = true
-description = 'A Functional-Structural Plant Model (FSPM) to simulate the interactions between a growing grapevine stock and powdery mildew, from organ to canopy levels, describing severity of the disease and dispersed spores'
+description = 'A functional-structural plant model to simulate the interactions between a growing grapevine stock and powdery mildew, from organ to canopy levels, describing severity of the disease and dispersed spores'
 image = '/images/icons/4977210_l.png'
 numero = 2
 +++
