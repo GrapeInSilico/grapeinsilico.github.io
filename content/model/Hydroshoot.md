@@ -2,7 +2,7 @@
 title ='Hydroshoot'
 slug = 'hydroshoot'
 disableComments = true
-description = 'A static Functional-Structural Plant Model (FSPM) to simulate the interactions between shoot’s hydraulic structure, gas-exchange and energy-budget, from organ to canopy levels.'
+description = 'A static functional-structural plant model to simulate the interactions between shoot hydraulic structure, gas-exchange and energy-budget, from organ to canopy levels.'
 image = '/images/icons/3438472_l.png'
 numero = 2
 +++
@@ -63,5 +63,4 @@ leaf temperature (c) and transpiration rate (d)
 
 ### Scientific publications
 
-- Albasha R, Fournier C, Pradal C, Chelle M, Prieto J, Louarn G, Simonneau T, Lebon E (2019) HydroShoot: a functional-structural plant model for simulating hydraulic structure, gas and energy exchange dynamics of complex plant canopies under water deficit - application to grapevine (*Vitis vinifera L.*). *in silico* Plants 1: diz007.
-- https://doi.org/10.1093/insilicoplants/diz007
+- Albasha R, Fournier C, Pradal C, Chelle M, Prieto J, Louarn G, Simonneau T, Lebon E (2019) HydroShoot: a functional-structural plant model for simulating hydraulic structure, gas and energy exchange dynamics of complex plant canopies under water deficit - application to grapevine (*Vitis vinifera L.*). *in silico* Plants 1: diz007.  [:page_facing_up:](https://doi.org/10.1093/insilicoplants/diz007) 
