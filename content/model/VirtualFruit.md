@@ -2,7 +2,7 @@
 title ='Virtual Berry'
 slug = 'virtualberry'
 disableComments = true
-description = 'Berry growth, sugar accumulation, water flux'
+description = 'A biophysical model to simulate mass and sugar accumulation in a ripening berry'
 image = '/images/icons/4698354_l.png'
 numero = 4
 +++
@@ -12,7 +12,7 @@ numero = 4
 
 ### Description
 
-Virtual Berry is 
+Virtual Berry is biophysical model originally designed for peach (Fishman and Génard, 1998) and adjusted to grapevines, to simulate the effects of various growth conditions (such as source–sink ratio and/or environmental factors) on diurnal mass, water and sugar accumulation in a ripening berry. The initial model represents a virtual mean berry during the post-veraison developmental stage, which is assumed to behave as a single cell separated with a composite membrane from the parent vine and the outside environment. Water accumulation was calculated through the water balance between xylem and phloem water influx and transpirational water loss, controlled by water potential gradient between the berry and the parent vine. Meanwhile, dry mass accumulation was simulated with the balance between phloem sugar import and respiration carbon depletion. The inputs of the model included initial fresh and dry mass, phloem sugar concentration, xylem water potential, fruit temperature and air humidity.
 
 ### Gallery
 
