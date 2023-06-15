@@ -2,7 +2,7 @@
 title ='Musca'
 slug = 'musca'
 disableComments = true
-description = 'A multi-scalesource–sinkcarbon allocation model exploringcarbon allocation in plants on different, user-defined, topological scales.'
+description = 'A multi-scale source–sink model exploring carbon allocation in plants on different, user-defined, topological scales.'
 image = '/images/icons/6027395_l.png'
 numero = 3
 katex = true
