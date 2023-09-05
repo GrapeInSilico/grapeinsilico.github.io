@@ -1,8 +1,20 @@
 {{ partial "htmlhead" . }}
+
+{{- $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
+{{- $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
+
+{{- $posts := where $.Site.Pages "Type" "model" }}
+
+{{- .Scratch.Set "postsForPaging" $posts }}
+{{- $postsForPaging := .Scratch.Get "postsForPaging" -}}
+
+{{- $variable := $postsForPaging.ByParam "numero" -}}
+
+
 	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" >
 
                 {{ partial "header" . }}
                 {{ partial "nav" . }}
@@ -19,6 +31,8 @@
                                 <h1>{{ .Title }}</h1>
                                 <p>{{ .Description }}</p>
                             </header>
+                            
+                            
                             <!--{{ if .Params.image }}
                             <div class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></div>
                             {{ end }}-->
@@ -29,8 +43,16 @@
                             {{ if not (eq .Params.disableComments true) }}
                             {{ template "_internal/disqus.html" . }}
                             {{ end }}
-                        </section>
 
+                        </section>
+                        
+                        {{ if (eq .Params.modelspage true) }}
+                                <!--{{ printf "%#v" $variable }} -->
+                                
+                                {{ partial "posts/list.html" (dict "posts" $variable "siteData" (index .Site.Data .Site.Language.Lang)) }}
+                                
+                                
+                        {{ end }}
 					</div>
 
                     {{ partial "footer/index" . }}

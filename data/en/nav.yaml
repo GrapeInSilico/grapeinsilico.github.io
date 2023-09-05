@@ -1,6 +1,6 @@
 items:
-- title: 'Framework'
-  url: '/gis_tuto'
+- title: 'Models'
+  url: '/models'
 - title: 'Scenarios'
   url: '/usecases'
 - title: 'Contact'

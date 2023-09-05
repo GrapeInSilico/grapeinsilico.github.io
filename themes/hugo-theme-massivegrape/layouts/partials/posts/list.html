@@ -1,7 +1,9 @@
 <!-- Posts -->
+{{- $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
 {{ $data := .siteData }}
+
 <section class="posts">
-    {{ range .posts.Pages }}
+    {{ range .posts }}
     <article>
         <header>
             {{ if not .Date.IsZero }}

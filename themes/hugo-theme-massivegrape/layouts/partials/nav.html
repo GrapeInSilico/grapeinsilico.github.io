@@ -3,20 +3,20 @@
 {{ $currentPage := .Page }}
 <nav id="nav">
     <ul class="links">
-        <li class="{{ if eq ($currentPage.RelPermalink) (`/`) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        <li class="{{ if eq ($currentPage.RelPermalink) (`/`) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>The Project{{/* .Site.Title */}}</a></li>
         {{- with $data.nav.items -}}
             {{- range $i, $e := . -}}
                 <li class="{{ if eq ($currentPage.RelPermalink) (print .url `/`) }}active{{end}}"><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
             {{- end -}}
         {{- end -}}
-        <!--{{/* with $data.contactinfo }}
+        {{/* with $data.contactinfo }}
         <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
         {{ end }}
         {{ if .IsTranslated }}
         {{ range .AllTranslations }}
         <li {{if eq ($.Site.Language) (.Language)}}class="active"{{end}}><a href='{{ .Permalink }}'>{{ .Language.LanguageName }}</a></li>
         {{ end }}
-        {{ end */}}-->
+        {{ end */}}
     </ul>
     {{ with $data.social }}
     <ul class="icons">
