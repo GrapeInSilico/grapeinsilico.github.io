@@ -30,7 +30,7 @@ Finally, the script *coupling_sim_vb.py* creates inputs for virtual berry, based
 
 ## Our test
 
-We run those 4 simulations with two different soil potential scenarios. On the first, for the four days of the simulation the soil water potential is constant, at -0.12 MPa. On the second it fluctuated with  0.30, -0.12, -0.89 and -0.20 MPa respectively. Among the numerous outputs that Virtual Berry gives us, we focus on the fresh fruit weight (FFW). As seen in the figures below, the position of the grape along the shoot plays a minor role, where the higher the grape is, the less its FFW. On the other hand the soil water potential plays a major role and notably on the third day of the second simulation there is a major drop in FFW because of the water deficit (induced by the -0.89 MPa water potential).
+We run those 4 simulations with two different soil potential scenarios. On the first, for the four days of the simulation the soil water potential was constant, at -0.12 MPa. On the second it fluctuated with  0.30, -0.12, -0.89 and -0.20 MPa respectively. Among the numerous outputs that Virtual Berry gives us, we focus on the fresh fruit weight (FFW). As seen in the figures below, the position of the grape along the shoot plays a minor role, where the higher the grape is, the less its FFW. On the other hand the soil water potential plays a major role and notably on the third day of the second simulation there is a major drop in FFW because of the water deficit (induced by the -0.89 MPa water potential).
 
 ![Simulation Results](/images/Figure.png)
 
